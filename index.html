@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weatherApp</title>
+    <title>NASA APOD Viewer</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-    <h1>weatherApp</h1>
-    <div id="apod-container">
-        <h2 id="apod-title"></h2>
-        <img id="apod-image" src="" alt="NASA APOD">
-        <p id="apod-explanation"></p>
-    </div>
-   <script src="script.js"></script> 
+    <header>
+        <h1>NASA Astronomy Picture of the Day</h1>
+    </header>
+    <main>
+        <section id="apod">
+            <h2>Image of the Day</h2>
+            <img id="apod-img" src="" alt="Astronomy Picture of the Day">
+            <h3 id="apod-title"></h3>
+            <p id="apod-date"></p>
+            <p id="apod-desc"></p>
+        </section>
+        <section id="search">
+            <h2>Search by Date</h2>
+            <input type="date" id="search-date">
+            <button id="search-btn">Search</button>
+        </section>
+        <section id="stats">
+            <h2>Image Stats</h2>
+            <canvas id="stats-chart"></canvas>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

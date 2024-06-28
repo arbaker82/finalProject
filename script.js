@@ -1,20 +1,40 @@
-// Fetch APOD data from NASA API
-fetch('https://api.nasa.gov/planetary/apod?api_key=oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+document.addEventListener('DOMContentLoaded', () => {
+    const apodImg = document.getElementById('apod-img');
+    const apodTitle = document.getElementById('apod-title');
+    const apodDate = document.getElementById('apod-date');
+    const apodDesc = document.getElementById('apod-desc');
+    const searchDate = document.getElementById('search-date');
+    const searchBtn = document.getElementById('search-btn');
+
+    const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ'; 
+
+    // Fetch the APOD for today
+    fetchAPOD();
+
+    // Fetch APOD for a specific date
+    searchBtn.addEventListener('click', () => {
+        const date = searchDate.value;
+        if (date) {
+            fetchAPOD(date);
         }
-        return response.json();
-    })
-    .then(data => {
-        // Process the data received from the API
-        console.log(data); // Log the data to see its structure
-        
-        // Update website's HTML with this data
-        document.getElementById('apod-title').textContent = data.title;
-        document.getElementById('apod-image').src = data.hdurl;
-        document.getElementById('apod-explanation').textContent = data.explanation;
-    })
-    .catch(error => {
-        console.error('Error fetching data from NASA API', error);
     });
+
+    function fetchAPOD(date = '') {
+        let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+        if (date) {
+            url += `&date=${date}`;
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                apodImg.src = data.url;
+                apodTitle.textContent = data.title;
+                apodDate.textContent = data.date;
+                apodDesc.textContent = data.explanation;
+            })
+            .catch(error => {
+                console.error('Error fetching APOD:', error);
+            });
+    }
+});
