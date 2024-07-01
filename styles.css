@@ -16,6 +16,14 @@ header {
     text-align: center;
 }
 
+.headerContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 main {
     padding: 1em;
     max-width: 800px;
