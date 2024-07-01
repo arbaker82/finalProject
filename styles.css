@@ -8,9 +8,10 @@ body {
 }
 
 header {
+    
     background-color: #0b3d91;
     color: white;
-    padding: 1em;
+    padding: 0.2em;
     width: 100%;
     text-align: center;
 }
