@@ -24,6 +24,10 @@ header {
 
 }
 
+.footerContainer {
+    background-color: blue;
+}
+
 main {
     padding: 1em;
     max-width: 800px;
@@ -47,6 +51,3 @@ section {
     align-items: center;
 }
 
-#stats {
-    width: 100%;
-}

@@ -62,3 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return date >= earliestDate && date <= today;
     }
 });
+// have to figure out a video player as some APODs are video //
