@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch the APOD for today
     fetchAPOD();
 
-    // Fetch APOD for a specific date
-   // error throw for date before 1995
+    // Fetch APOD for a specific date when the search button is clicked
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (isValidDate(date)) {
@@ -22,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /**
+     * Fetch the Astronomy Picture of the Day (APOD) from NASA's API.
+     * @param {string} date - The date for which to fetch the APOD (optional).
+     */
     function fetchAPOD(date = '') {
         let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
         if (date) {
@@ -40,17 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching APOD:', error);
             });
     }
-// validation  that user selected date is not before 1995
+
+    /**
+     * Validate if the input date is in the correct format and within the valid range.
+     * @param {string} dateString - The date string to validate.
+     * @returns {boolean} - True if the date is valid, false otherwise.
+     */
     function isValidDate(dateString) {
         const datePattern = /^\d{4}-\d{2}-\d{2}$/;
         if (!datePattern.test(dateString)) {
             return false;
         }
-        
+
         const date = new Date(dateString);
         const earliestDate = new Date('1995-06-16');
         const today = new Date();
-        
+
         return date >= earliestDate && date <= today;
     }
 });
