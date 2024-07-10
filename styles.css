@@ -1,14 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
+    font-family: Arial, sans-serif;
     align-items: center;
 }
 
 header {
-    
     background-color: #1b59d794;
     color: white;
     padding: 0.2em;
@@ -17,18 +19,20 @@ header {
 }
 
 .headerContainer {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.footerContainer {
-    background-color: blue;
+.whiteText {
+    color: white;
 }
 
 main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1em;
     max-width: 800px;
     width: 100%;
@@ -51,3 +55,17 @@ section {
     align-items: center;
 }
 
+footer {
+    background-color: #1b59d794;
+    color: white;
+    padding: 0.2em;
+    width: 100%;
+    text-align: center;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
