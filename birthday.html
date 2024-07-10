@@ -3,30 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA APOD Viewer</title>
+    <title>Birthday APOD Carousel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="headerContainer">
             <img src="nasalogo.png" alt="NASA Logo">
-            <h1>NASA Astronomy Picture of the Day</h1>
+            <h1>NASA Astronomy Picture of the Day - Birthday Edition</h1>
         </div>
     </header>
     <main>
-        <section id="apod">
-            <img id="apod-img" src="" alt="Astronomy Picture of the Day">
-            <h3 id="apod-title"></h3>
-            <p id="apod-date"></p>
-            <p id="apod-desc"></p>
-        </section>
         <section id="search">
-            <h2>Search by Date</h2>
-            <input type="date" id="search-date">
+            <h2>Enter Your Birthday</h2>
+            <input type="date" id="birthday" max="2023-12-31">
             <button id="search-btn">Search</button>
         </section>
-        <section id="birthday-link">
-            <a href="birthday.html">View APODs on Your Birthday</a>
+        <section id="carousel" class="carousel">
+            <!-- Images will be inserted here -->
+        </section>
+        <section id="back-link">
+            <a href="index.html">Back to Main APOD Viewer</a>
         </section>
     </main>
     <footer>
@@ -34,6 +31,6 @@
             <p>Adam Baker 2024</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="birthday.js"></script>
 </body>
 </html>

@@ -1,31 +1,27 @@
 html, body {
     height: 100%;
     margin: 0;
-}
-
-body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
     align-items: center;
+    background-color: #f0f0f0; /* Light background for contrast */
 }
 
-header {
+header, footer {
     background-color: #1b59d794;
     color: white;
-    padding: 0.2em;
-    width: 100%;
+    padding: 0.5em;
+    width: 100vw; /* Use full viewport width */
     text-align: center;
+    box-sizing: border-box; /* Include padding in the width calculation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow for text */
 }
 
-.headerContainer {
+.headerContainer, .footerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.whiteText {
-    color: white;
 }
 
 main {
@@ -36,10 +32,14 @@ main {
     padding: 1em;
     max-width: 800px;
     width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the main content */
+    background-color: white; /* White background for main content */
+    border-radius: 8px; /* Rounded corners */
 }
 
 section {
     margin-bottom: 2em;
+    width: 100%;
 }
 
 #apod img {
@@ -47,25 +47,58 @@ section {
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for images */
 }
 
-#search {
+#search, #birthday-link, #back-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer {
-    background-color: #1b59d794;
-    color: white;
-    padding: 0.2em;
-    width: 100%;
-    text-align: center;
+#search input[type="date"], #search button, #birthday-link a, #back-link a {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    margin: 0.5em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.footerContainer {
+#search button, #birthday-link a, #back-link a {
+    background-color: #1b59d7;
+    color: white;
+    text-decoration: none;
+}
+
+#search button:hover, #birthday-link a:hover, #back-link a:hover {
+    background-color: #144a99; /* Darker shade on hover */
+}
+
+.carousel {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    gap: 1em;
+}
+
+.carousel img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for images */
+}
+
+h1, h2, h3, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle drop shadow for text */
+}
+
+h1, h2 {
+    margin: 0.5em 0;
+}
+
+p {
+    margin: 0.2em 0;
 }

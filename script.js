@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
-
-    const elements = {
-        apodImg: document.getElementById('apod-img'),
-        apodTitle: document.getElementById('apod-title'),
-        apodDate: document.getElementById('apod-date'),
-        apodDesc: document.getElementById('apod-desc'),
-        searchDate: document.getElementById('search-date'),
-        searchBtn: document.getElementById('search-btn')
-    };
+    const apodImg = document.getElementById('apod-img');
+    const apodTitle = document.getElementById('apod-title');
+    const apodDate = document.getElementById('apod-date');
+    const apodDesc = document.getElementById('apod-desc');
+    const searchDate = document.getElementById('search-date');
+    const searchBtn = document.getElementById('search-btn');
 
     fetchAPOD();
 
-    elements.searchBtn.addEventListener('click', () => {
-        const date = elements.searchDate.value;
+    searchBtn.addEventListener('click', () => {
+        const date = searchDate.value;
         if (isValidDate(date)) {
             fetchAPOD(date);
         } else {
@@ -22,28 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function fetchAPOD(date = '') {
-        let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-        if (date) {
-            url += `&date=${date}`;
-        }
-
+        const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}${date ? `&date=${date}` : ''}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                if (data.media_type === 'image') {
-                    elements.apodImg.src = data.url;
-                    elements.apodImg.style.display = 'block';
-                    elements.apodDesc.innerHTML = data.explanation;
-                } else if (data.media_type === 'video') {
-                    elements.apodImg.style.display = 'none';
-                    elements.apodDesc.innerHTML = `<iframe src="${data.url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-                }
-                elements.apodTitle.textContent = data.title;
-                elements.apodDate.textContent = data.date;
+                apodImg.src = data.url;
+                apodTitle.textContent = data.title;
+                apodDate.textContent = data.date;
+                apodDesc.textContent = data.explanation;
             })
-            .catch(error => {
-                console.error('Error fetching APOD:', error);
-            });
+            .catch(error => console.error('Error fetching APOD:', error));
     }
 
     function isValidDate(dateString) {
