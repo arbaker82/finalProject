@@ -9,7 +9,7 @@ html, body {
 }
 
 header, footer {
-    background-color: #1b59d794;
+    background-color: #134099e1;
     color: rgb(255, 255, 255);
     padding: 0.5em;
     width: 100vw;
@@ -44,7 +44,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    color: #ff2a00f1;
 }
 
 main {
@@ -96,7 +96,7 @@ section {
 }
 
 #search button:hover, #birthday-link a:hover, #back-link a:hover {
-    background-color: #ffcc00;
+    background-color: #b41703f6;
 }
 
 .carousel {
@@ -115,7 +115,7 @@ section {
 }
 
 h1, h2, h3, p {
-    margin: 0.5em;
+    margin: 0.5em 0;
 }
 
 h1, h2 {
