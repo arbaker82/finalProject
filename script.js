@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValidDate(date)) {
             fetchAPOD(date);
         } else {
-            alert('Please enter a valid date in YYYY-MM-DD format within the range from 1995-06-16 to today.');
+            alert('Please enter a valid date between today and June 16 1995, the day the first APOD was released.');
         }
     });
 

@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
     const searchBtn = document.getElementById('search-btn');
-    const birthdayInput = document.getElementById('birthday');
+    const monthInput = document.getElementById('month');
+    const dayInput = document.getElementById('day');
     const carousel = document.getElementById('carousel');
 
     searchBtn.addEventListener('click', () => {
-        const birthday = birthdayInput.value;
-        if (isValidDate(birthday)) {
-            fetchAPODsForBirthday(birthday);
+        const month = monthInput.value;
+        const day = dayInput.value;
+        if (isValidDate(month, day)) {
+            fetchAPODsForBirthday(month, day);
         } else {
             alert('Please enter a valid date.');
         }
     });
 
-    function isValidDate(dateString) {
-        return /^\d{4}-\d{2}-\d{2}$/.test(dateString);
+    function isValidDate(month, day) {
+        return /^[01]\d$/.test(month) && /^[0-3]\d$/.test(day) && day <= 31;
     }
 
-    async function fetchAPODsForBirthday(birthday) {
+    async function fetchAPODsForBirthday(month, day) {
         const startYear = 1995;
         const endYear = new Date().getFullYear();
-        const [month, day] = birthday.split('-').slice(1);
         const promises = [];
 
         for (let year = startYear; year <= endYear; year++) {
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayCarousel(apods) {
         carousel.innerHTML = '';  // Clear previous images
         apods.forEach(apod => {
-            if (apod.media_type === 'image') {
+            if (apod && apod.media_type === 'image') {
                 const img = document.createElement('img');
                 img.src = apod.url;
                 img.alt = apod.title;
