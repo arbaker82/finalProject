@@ -5,12 +5,12 @@ html, body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #717171;
 }
 
 header, footer {
     background-color: #1b59d794;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 0.5em;
     width: 100vw;
     text-align: center;
@@ -56,7 +56,7 @@ main {
     max-width: 800px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
 }
 
@@ -96,7 +96,7 @@ section {
 }
 
 #search button:hover, #birthday-link a:hover, #back-link a:hover {
-    background-color: #c21313;
+    background-color: #ffcc00;
 }
 
 .carousel {
