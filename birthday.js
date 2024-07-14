@@ -50,11 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayCarousel(apods) {
         carousel.innerHTML = '';  // Clear previous images
         apods.forEach(apod => {
-            if (apod && apod.media_type === 'image') {
-                const img = document.createElement('img');
-                img.src = apod.url;
-                img.alt = apod.title;
-                carousel.appendChild(img);
+            if (apod) {
+                const mediaElement = document.createElement(apod.media_type === 'image' ? 'img' : 'iframe');
+                mediaElement.src = apod.url;
+                mediaElement.alt = apod.title;
+                if (apod.media_type === 'video') {
+                    mediaElement.width = "560";
+                    mediaElement.height = "315";
+                    mediaElement.frameBorder = "0";
+                    mediaElement.allowFullscreen = true;
+                }
+                carousel.appendChild(mediaElement);
             }
         });
     }
