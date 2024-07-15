@@ -72,3 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch today's APOD on page load
     fetchAPOD();
 });
+
+/*  1.	Event Listener: The DOMContentLoaded event ensures
+     the code runs only after the DOM is fully loaded.
+	2.	API Key: The API key required to fetch data from the
+     NASA APOD API.
+	3.	DOM Elements: Variables to store references to HTML
+     elements where the APOD data will be displayed.
+	4.	Search Button: Adds a click event listener to the
+     search button. When clicked, it retrieves the date from
+     the input field and calls the fetchAPOD function if
+     the date is valid.
+	5.	Date Validation: The isValidDate function checks if
+     the entered date is in the correct format and within the
+     valid range (June 16, 1995, to today).
+	6.	Fetch APOD: The fetchAPOD function makes an API
+     request to fetch APOD data for a specific date. If no
+     date is provided, it fetches today’s APOD.
+	7.	Display APOD: The displayAPOD function updates the
+    HTML elements with the fetched APOD data. It handles
+    both images and videos, displaying the appropriate
+    media type.   */

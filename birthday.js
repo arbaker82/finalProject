@@ -77,3 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/*  This JavaScript file handles fetching and displaying
+APODs for a specific birthday across multiple years. */
+
+/*  1.	Event Listener: The DOMContentLoaded event ensures
+      the code runs only after the DOM is fully loaded.
+	2.	API Key: The API key required to fetch data from the
+      NASA APOD API.
+	3.	DOM Elements: Variables to store references to HTML
+      elements where the user will input their birthday and
+      where the APOD carousel will be displayed.
+	4.	Search Button: Adds a click event listener to the
+      search button. When clicked, it retrieves the month and
+      day from the input fields and calls the
+      fetchAPODsForBirthday function if the date is valid.
+	5.	Date Validation: The isValidDate function checks if
+      the entered month and day are in the correct format.
+	6.	Fetch APODs for Birthday: The fetchAPODsForBirthday
+      function creates an array of promises to fetch APODs 
+      for the selected birthday across multiple years.
+	7.	Fetch APOD: The fetchAPOD function makes an API
+      request to fetch APOD data for a specific date.
+	8.	Display Carousel: The displayCarousel function
+      updates the carousel with the fetched APODs. It handles
+      both images and videos, displaying the appropriate
+      media type.  */
