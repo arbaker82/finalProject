@@ -17,7 +17,7 @@ header, footer {
     box-sizing: border-box;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     border: 2px groove #000000;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .headerContainer, .footerContainer {
