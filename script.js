@@ -1,5 +1,14 @@
+/**
+ * This script fetches and displays Astronomy Picture of the Day (APOD) data from the NASA API.
+ * It allows users to search for APOD data by date and validates the entered date.
+ * The fetched APOD data is displayed in the corresponding HTML elements.
+ *
+ * @file FILEPATH: /Users/adambaker/Documents/projects/finalProject/script.js
+ * @see {@link https://api.nasa.gov/planetary/apod|NASA APOD API}
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Your NASA API key
+    // NASA API key
     const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
 
     // DOM elements for displaying APOD
@@ -23,7 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Function to validate the date
+    /**
+     * Checks if the entered date is in the correct format (YYYY-MM-DD) and within the valid range (June 16, 1995, to today).
+     *
+     * @param {string} dateString - The date string to validate.
+     * @returns {boolean} - True if the date is valid, false otherwise.
+     */
     function isValidDate(dateString) {
         // Check if the date is in the format YYYY-MM-DD
         const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -37,7 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return date >= earliestDate && date <= today;
     }
 
-    // Function to fetch APOD data from NASA API
+    /**
+     * Fetches APOD data from the NASA API for the specified date (or today's date if no date is provided).
+     * Displays the fetched APOD data in the corresponding HTML elements.
+     *
+     * @param {string} [date=''] - The date for which to fetch APOD data in the format YYYY-MM-DD.
+     * @returns {Promise<void>} - A promise that resolves when the APOD data is fetched and displayed.
+     */
     async function fetchAPOD(date = '') {
         const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}${date ? `&date=${date}` : ''}`;
         try {
@@ -51,7 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to display the fetched APOD data
+    /**
+     * Displays the fetched APOD data in the corresponding HTML elements.
+     * Handles both images and videos, displaying the appropriate media type.
+     *
+     * @param {object} data - The APOD data fetched from the NASA API.
+     */
     function displayAPOD(data) {
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
@@ -72,24 +97,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch today's APOD on page load
     fetchAPOD();
 });
-
-/*  1.	Event Listener: The DOMContentLoaded event ensures
-     the code runs only after the DOM is fully loaded.
-	2.	API Key: The API key required to fetch data from the
-     NASA APOD API.
-	3.	DOM Elements: Variables to store references to HTML
-     elements where the APOD data will be displayed.
-	4.	Search Button: Adds a click event listener to the
-     search button. When clicked, it retrieves the date from
-     the input field and calls the fetchAPOD function if
-     the date is valid.
-	5.	Date Validation: The isValidDate function checks if
-     the entered date is in the correct format and within the
-     valid range (June 16, 1995, to today).
-	6.	Fetch APOD: The fetchAPOD function makes an API
-     request to fetch APOD data for a specific date. If no
-     date is provided, it fetches today’s APOD.
-	7.	Display APOD: The displayAPOD function updates the
-    HTML elements with the fetched APOD data. It handles
-    both images and videos, displaying the appropriate
-    media type.   */
