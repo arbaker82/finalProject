@@ -125,3 +125,10 @@ h1, h2 {
 p {
     margin: 0.2em 0;
 }
+
+@media (max-width: 768px) {
+    .headerContainer img {
+        width: 50%; 
+        height: auto; 
+    }
+}
