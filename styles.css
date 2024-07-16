@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: Arial, sans-serif;
+    font-family: 'Exo', sans-serif;
     align-items: center;
     background-color: #717171;
 }
