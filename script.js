@@ -3,7 +3,6 @@
  * It allows users to search for APOD data by date and validates the entered date.
  * The fetched APOD data is displayed in the corresponding HTML elements.
  *
- * @file FILEPATH: /Users/adambaker/Documents/projects/finalProject/script.js
  * @see {@link https://api.nasa.gov/planetary/apod|NASA APOD API}
  */
 
