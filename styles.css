@@ -76,7 +76,7 @@ section {
 
 #search, #birthday-link, #back-link {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
