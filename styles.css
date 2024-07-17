@@ -76,6 +76,13 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#apod-video {
+    width: 100%;
+    height: 70vh; /* Adjust the height as needed */
+    max-width: 100%;
+    margin: auto;
+}
+
 #search, #birthday-link, #back-link {
     display: flex;
     justify-content: space-around;
