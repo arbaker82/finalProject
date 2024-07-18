@@ -11,13 +11,15 @@ html, body {
 header, footer {
     background-image: linear-gradient(to left, #134099, #000000);
     color: rgb(255, 255, 255);
-    padding: 0.5em;
+    padding: 1em; /* Responsive padding */
     width: 100vw;
     text-align: center;
     box-sizing: border-box;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    border: 2px inset #000000;
+    border: 2px outset #000000;
     border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Subtle shadow */
+    backdrop-filter: blur(5px); /* Slight transparency effect */
 }
 
 .headerContainer, .footerContainer {
