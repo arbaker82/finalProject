@@ -29,7 +29,7 @@
  * @returns {void}
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Your NASA API key
+    // NASA API key
     const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
 
     // DOM elements for the birthday search
