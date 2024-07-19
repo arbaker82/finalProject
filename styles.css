@@ -5,11 +5,11 @@ html, body {
     flex-direction: column; /* Arrange children in a column */
     font-family: 'Exo', sans-serif; /* Set font-family to 'Exo' */
     align-items: center; /* Center items horizontally */
-    background-color: #505050; /* Set background color */
+    background-image: url(backgroundJwst.jpg);
 }
 
 header, footer {
-    background-image: linear-gradient(to left, #134099, #000000); /* Gradient background */
+    background-image: linear-gradient(to left, #5c5c5c, #000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     padding: 1em; /* Responsive padding */
     width: 100vw; /* Full viewport width */
@@ -76,11 +76,13 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     background-color: rgb(255, 255, 255); /* Background color */
     border-radius: 8px; /* Rounded corners */
+    
 }
 
 section {
     margin-bottom: 2em; /* Space below each section */
     width: 100%; /* Full width */
+    
 }
 
 #apod img {
