@@ -12,16 +12,16 @@ html, body {
 
 
 header, footer {
-    background-image: linear-gradient(to left, #111379, #000000); /* Gradient background */
+    background-image: linear-gradient(to bottom, #1f1f1f, #000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     padding: 1em; /* Responsive padding */
     width: 100vw; /* Full viewport width */
     text-align: center; /* Center text */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border with slight transparency */
-    border-radius: 2px; /* Slightly rounded corners */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Subtle shadow */
+    border: 2px solid rgba(0, 0, 0, 0.746); /* Border with slight transparency */
+    border-radius: 3px; /* Slightly rounded corners */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.574); /* Subtle shadow */
     
 }
 
@@ -34,14 +34,14 @@ header, footer {
     display: flex; /* Enable flexbox layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    animation: fadeIn 4s ease-out; /* Apply fadeIn animation */
+    animation: fadeIn 3s ease-out; /* Apply fadeIn animation */
 }
 
 .textContainer {
     display: flex; /* Enable flexbox layout */
     flex-direction: column; /* Arrange children in a column */
     justify-content: center; /* Center text vertically */
-    margin-left: 10px; /* Add space between the logo and the text */
+   
 }
 
 nav ul {
@@ -64,8 +64,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff2a00f1; /* Change color on hover */
-    transform: scale(1.1); /* Scale up on hover */
+    color: #ff0000d4; /* Change color on hover */
+ 
 }
 
 main {
@@ -74,9 +74,9 @@ main {
     flex-direction: column; /* Arrange children in a column */
     align-items: center; /* Center items horizontally */
     padding: 0.2em; /* Padding inside main */
-    max-width: 800px; /* Max width for main content */
+    max-width: 1000px; /* Max width for main content */
     width: 100%; /* Full width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
     background-color: rgb(255, 255, 255); /* Background color */
     border-radius: 8px; /* Rounded corners */
     
@@ -120,7 +120,7 @@ section {
 }
 
 #search button, #birthday-link a, #back-link a {
-    background-color: #111379; /* Button background color */
+    background-color: #575757; /* Button background color */
     color: white; /* Button text color */
     text-decoration: none; /* Remove underline from links */
 }
