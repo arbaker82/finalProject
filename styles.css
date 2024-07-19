@@ -59,7 +59,7 @@ nav ul li {
 nav ul li a {
     color: white; /* Link color */
     text-decoration: none; /* Remove underline from links */
-    font-size: 1.2em; /* Set font size */
+    font-size: 1em; /* Set font size */
     transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform properties */
 }
 
