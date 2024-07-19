@@ -24,8 +24,15 @@ header, footer {
 
 .headerContainer, .footerContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+    margin-left: 10px; /* Add some space between the logo and the text */
 }
 
 nav ul {
@@ -45,10 +52,12 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s;
+    
 }
 
 nav ul li a:hover {
     color: #ff2a00f1;
+    
 }
 
 main {
