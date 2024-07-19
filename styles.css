@@ -5,8 +5,11 @@ html, body {
     flex-direction: column; /* Arrange children in a column */
     font-family: 'Exo', sans-serif; /* Set font-family to 'Exo' */
     align-items: center; /* Center items horizontally */
-    background-image: url(backgroundJwst.jpg);
+    background-image: url(jwst1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 
 header, footer {
     background-image: linear-gradient(to left, #5c5c5c, #000000); /* Gradient background */
