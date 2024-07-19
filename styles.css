@@ -146,6 +146,14 @@ p {
     margin: 0.2em 0;
 }
 
+img[src="nasalogo1.png"] {
+    transition: transform 1.5s;
+}
+
+img[src="nasalogo1.png"]:hover {
+    transform: rotate(360deg);
+}
+
 @media (max-width: 768px) {
     header, footer {
         padding: 0.5em 0.2em; /* Reduce padding on smaller screens */
