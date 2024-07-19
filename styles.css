@@ -19,7 +19,7 @@ header, footer {
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border with slight transparency */
     border-radius: 2px; /* Slightly rounded corners */
     box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Subtle shadow */
-    backdrop-filter: blur(5px); /* Slight transparency effect */
+    
 }
 
 @keyframes fadeIn {
@@ -117,7 +117,7 @@ section {
 }
 
 #search button, #birthday-link a, #back-link a {
-    background-color: #0137a4; /* Button background color */
+    background-color: #000000; /* Button background color */
     color: white; /* Button text color */
     text-decoration: none; /* Remove underline from links */
 }
