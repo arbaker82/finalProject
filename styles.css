@@ -22,10 +22,16 @@ header, footer {
     backdrop-filter: blur(5px); /* Slight transparency effect */
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .headerContainer, .footerContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 2s ease-out;
 }
 
 .textContainer {
