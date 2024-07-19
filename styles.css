@@ -12,7 +12,7 @@ html, body {
 
 
 header, footer {
-    background-image: linear-gradient(to left, #5c5c5c, #000000); /* Gradient background */
+    background-image: linear-gradient(to left, #111379, #000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     padding: 1em; /* Responsive padding */
     width: 100vw; /* Full viewport width */
@@ -34,7 +34,7 @@ header, footer {
     display: flex; /* Enable flexbox layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    animation: fadeIn 2.5s ease-out; /* Apply fadeIn animation */
+    animation: fadeIn 4s ease-out; /* Apply fadeIn animation */
 }
 
 .textContainer {
@@ -120,7 +120,7 @@ section {
 }
 
 #search button, #birthday-link a, #back-link a {
-    background-color: #000000; /* Button background color */
+    background-color: #111379; /* Button background color */
     color: white; /* Button text color */
     text-decoration: none; /* Remove underline from links */
 }
