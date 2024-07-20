@@ -79,7 +79,7 @@ main {
     display: flex; /* Enable flexbox layout */
     flex-direction: column; /* Arrange children in a column */
     align-items: center; /* Center items horizontally */
-    padding: .1em; /* Padding inside main */
+    padding: .5em; /* Padding inside main */
     max-width: 1000px; /* Max width for main content */
     width: 100%; /* Full width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
