@@ -34,14 +34,12 @@ header, footer {
     display: flex; /* Enable flexbox layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    
 }
 
 .textContainer {
     display: flex; /* Enable flexbox layout */
     flex-direction: column; /* Arrange children in a column */
     justify-content: center; /* Center text vertically */
-   
 }
 
 .catchPhrase {
