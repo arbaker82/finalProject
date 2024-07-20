@@ -11,16 +11,22 @@ html, body {
 }
 
 
-header, footer {
-    background-image: linear-gradient(to bottom, #1f1f1f, #000000); /* Gradient background */
+header {
+    background-image: linear-gradient(to bottom, #00000082, #00000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     width: 100vw; /* Full viewport width */
     text-align: center; /* Center text */
-    text-shadow: 2px 2px 4px rgb(78, 78, 78); /* Text shadow */
-    border: 2px inset rgba(0, 0, 0, 0.746); /* Border with slight transparency */
-    border-radius: 2px; /* Slightly rounded corners */
-    box-shadow: 0 8px 12px rgba(92, 92, 92, 0.574); /* Subtle shadow */
-    
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
+    padding: 1em 0; /* Padding inside header */
+}
+
+footer {
+    background-image: linear-gradient(to top, #000000ac, #00000000); /* Gradient background */
+    color: rgb(255, 255, 255); /* Text color */
+    width: 100vw; /* Full viewport width */
+    text-align: center; /* Center text */
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
+    padding: 1em 0; /* Padding inside footer */
 }
 
 @keyframes fadeIn {
@@ -77,8 +83,9 @@ main {
     max-width: 1000px; /* Max width for main content */
     width: 100%; /* Full width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
-    background-color: rgb(255, 255, 255); /* Background color */
+    background-color: rgb(37, 37, 37); /* Background color */
     border-radius: 8px; /* Rounded corners */
+    color: white;
     
 }
 
