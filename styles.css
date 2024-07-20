@@ -34,7 +34,7 @@ header, footer {
     display: flex; /* Enable flexbox layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    animation: fadeIn 3s ease-out; /* Apply fadeIn animation */
+    
 }
 
 .textContainer {
@@ -42,6 +42,11 @@ header, footer {
     flex-direction: column; /* Arrange children in a column */
     justify-content: center; /* Center text vertically */
    
+}
+
+.catchPhrase {
+    font-size: 1.5em;
+    animation: fadeIn 4s; /* Apply fadeIn animation */
 }
 
 nav ul {
