@@ -14,14 +14,12 @@ html, body {
 header, footer {
     background-image: linear-gradient(to bottom, #1f1f1f, #000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
-    padding: 1em; /* Responsive padding */
     width: 100vw; /* Full viewport width */
     text-align: center; /* Center text */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
-    border: 2px solid rgba(0, 0, 0, 0.746); /* Border with slight transparency */
-    border-radius: 3px; /* Slightly rounded corners */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.574); /* Subtle shadow */
+    text-shadow: 2px 2px 4px rgb(78, 78, 78); /* Text shadow */
+    border: 2px inset rgba(0, 0, 0, 0.746); /* Border with slight transparency */
+    border-radius: 2px; /* Slightly rounded corners */
+    box-shadow: 0 8px 12px rgba(92, 92, 92, 0.574); /* Subtle shadow */
     
 }
 
@@ -63,7 +61,6 @@ nav ul li a {
     color: white; /* Link color */
     text-decoration: none; /* Remove underline from links */
     font-size: 1em; /* Set font size */
-    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform properties */
 }
 
 nav ul li a:hover {
@@ -86,7 +83,6 @@ main {
 }
 
 section {
-    margin-bottom: 2em; /* Space below each section */
     width: 100%; /* Full width */
     
 }
@@ -119,7 +115,6 @@ section {
     border-radius: 4px; /* Rounded corners */
     font-size: 1em; /* Set font size */
     margin: 0.5em; /* Space between elements */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background color and text color */
 }
 
 #search button, #birthday-link a, #back-link a {
@@ -129,14 +124,14 @@ section {
 }
 
 #search button:hover, #birthday-link a:hover, #back-link a:hover {
-    background-color: #b41703f6; /* Change background color on hover */
+    background-color: #b41803; /* Change background color on hover */
 }
 
 .carousel {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Wrap items to next line */
     justify-content: center; /* Center items */
-    gap: 1em; /* Space between items */
+    gap: .5em; /* Space between items */
 }
 
 .carousel img {
@@ -152,7 +147,7 @@ h1, h2, h3, p {
 }
 
 h1, h2 {
-    margin: 0.5em 0; /* Space above and below headings */
+    margin: 0.2em 0; /* Space above and below headings */
 }
 
 p {
