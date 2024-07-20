@@ -86,6 +86,7 @@ main {
     background-color: rgb(37, 37, 37); /* Background color */
     border-radius: 8px; /* Rounded corners */
     color: white;
+    box-sizing: border-box;
     
 }
 
