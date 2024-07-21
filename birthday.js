@@ -1,33 +1,3 @@
-/**
- * This JavaScript file handles fetching and displaying
- * APODs for a specific birthday across multiple years.
- *
- * @event DOMContentLoaded - The DOMContentLoaded event ensures
- * the code runs only after the DOM is fully loaded.
- * @constant {string} apiKey - The API key required to fetch data from the NASA APOD API.
- * @constant {HTMLElement} searchBtn - The search button element.
- * @constant {HTMLElement} monthInput - The input field for the month.
- * @constant {HTMLElement} dayInput - The input field for the day.
- * @constant {HTMLElement} carousel - The carousel element.
- *
- * @function isValidDate - Function to validate the date.
- * @param {string} month - The month value.
- * @param {string} day - The day value.
- * @returns {boolean} - Returns true if the date is valid, false otherwise.
- *
- * @function fetchAPODsForBirthday - Function to fetch APODs for the specified birthday.
- * @param {string} month - The month value.
- * @param {string} day - The day value.
- * @returns {Promise<void>} - Returns a promise that resolves when all APODs are fetched.
- *
- * @function fetchAPOD - Function to fetch APOD data for a specific date from NASA API.
- * @param {string} date - The date in the format 'YYYY-MM-DD'.
- * @returns {Promise<object|null>} - Returns a promise that resolves with the APOD data or null if there is an error.
- *
- * @function displayCarousel - Function to display the fetched APOD data in a carousel.
- * @param {object[]} apods - An array of APOD objects.
- * @returns {void}
- */
 document.addEventListener('DOMContentLoaded', () => {
     // NASA API key
     const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
@@ -59,7 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchAPODsForBirthday(month, day) {
         const startYear = 1995; // The year the first APOD was released
         const endYear = new Date().getFullYear();
-        const promises = [];
+
+//** REQUIREMENT 1: Create a list of promises to fetch APODs for each year from startYear to endYear. **//    
+        
+    const promises = [];
 
         // Create a list of promises to fetch APODs for each year from startYear to endYear
         for (let year = startYear; year <= endYear; year++) {
@@ -68,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Wait for all promises to resolve and filter out null results
+//** REQUIREMENT 1: Creat an array to store APOD data  **//    
         const apods = await Promise.all(promises);
         displayCarousel(apods.filter(apod => apod));
     }
@@ -88,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to display the fetched APOD data in a carousel
+
+//** Requirement 2: Array analysis: analyze APODs array to determine wether each item is an imf or video and dynamically create HTML elements **//    
+    
     function displayCarousel(apods) {
         carousel.innerHTML = '';  // Clear previous images
         apods.forEach(apod => {
@@ -107,3 +84,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+/**
+ * This JavaScript file handles fetching and displaying
+ * APODs for a specific birthday across multiple years.
+ *
+ * @event DOMContentLoaded - The DOMContentLoaded event ensures
+ * the code runs only after the DOM is fully loaded.
+ * @constant {string} apiKey - The API key required to fetch data from the NASA APOD API.
+ * @constant {HTMLElement} searchBtn - The search button element.
+ * @constant {HTMLElement} monthInput - The input field for the month.
+ * @constant {HTMLElement} dayInput - The input field for the day.
+ * @constant {HTMLElement} carousel - The carousel element.
+ *
+ * @function isValidDate - Function to validate the date.
+ * @param {string} month - The month value.
+ * @param {string} day - The day value.
+ * @returns {boolean} - Returns true if the date is valid, false otherwise.
+ *
+ * @function fetchAPODsForBirthday - Function to fetch APODs for the specified birthday.
+ * @param {string} month - The month value.
+ * @param {string} day - The day value.
+ * @returns {Promise<void>} - Returns a promise that resolves when all APODs are fetched.
+ *
+ * @function fetchAPOD - Function to fetch APOD data for a specific date from NASA API.
+ * @param {string} date - The date in the format 'YYYY-MM-DD'.
+ * @returns {Promise<object|null>} - Returns a promise that resolves with the APOD data or null if there is an error.
+ *
+ * @function displayCarousel - Function to display the fetched APOD data in a carousel.
+ * @param {object[]} apods - An array of APOD objects.
+ * @returns {void}
+ */
