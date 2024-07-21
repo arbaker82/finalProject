@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.media_type === 'image') {
             apodImg.src = data.url;
             apodImg.style.display = 'block';
+            apodImg.parentElement.href = data.hdurl || data.url; // Use high-resolution URL if available
             apodVideo.style.display = 'none';
         } else if (data.media_type === 'video') {
             apodVideo.src = data.url;
