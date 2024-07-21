@@ -10,7 +10,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 - Search for APOD images by date.
 - Responsive design for both mobile and desktop.
 
-## This project meets these requirements and are noted in the comments.
+## This project meets these requirements.  They are noted in the comments and referenced by their number assigned here. 
 1. Use arrays, objects, sets or maps to store and retrieve information that is displayed in your app.
 2. Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app.
 3. Use a regular expression to validate user input and either prevent the invalid inpout or inform the user about it.

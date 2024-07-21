@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Function to validate the date
+    // 3. Function to validate the date
     function isValidDate(month, day) {
-        // Check if month and day are valid numbers
+        // 3. Use a regular expression to validate user input and either prevent the invalid input or inform the user about it.
         if (!/^[0-1][0-9]$/.test(month) || !/^[0-3][0-9]$/.test(day)) {
             return false;
         }
@@ -37,13 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return date.getMonth() === monthNumber - 1 && date.getDate() === dayNumber;
     }
 
-    // Function to fetch APODs for the specified birthday
+    // 1. Function to fetch APODs for the specified birthday
     async function fetchAPODsForBirthday(month, day) {
         const startYear = 1995; // The year the first APOD was released
         const endYear = new Date().getFullYear();
 
         const promises = [];
 
+        // 1. Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
         // Create a list of promises to fetch APODs for each year from startYear to endYear
         for (let year = startYear; year <= endYear; year++) {
             const date = `${year}-${month}-${day}`;
@@ -55,8 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCarousel(apods.filter(apod => apod));
     }
 
-    // Function to fetch APOD data for a specific date from NASA API
+    // 10. Function to fetch APOD data for a specific date from NASA API
     async function fetchAPOD(date) {
+        // 10. Retrieve data from a third-party API and use it to display something in your app.
         const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
         try {
             const response = await fetch(url);
@@ -70,8 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to display the fetched APOD data in a carousel
+    // 2. Function to display the fetched APOD data in a carousel
     function displayCarousel(apods) {
+        // 2. Analyze data that is stored in arrays, objects, sets or maps and display information about it in your app.
         carousel.innerHTML = '';  // Clear previous images
         apods.forEach(apod => {
             if (apod) {
@@ -89,4 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+});8
