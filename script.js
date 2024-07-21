@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
 
-//** REQUIREMENT 3: Regular expression for date validation **//     
+//** REQUIREMENT 3: Use a regular expression to validate user input and either prevent the invalid input or inform the user about it **//     
     
     // Regular expression for date validation (YYYY-MM-DD format)
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValidDate(date)) {
             fetchAPOD(date);
         } else {
-            alert('Please enter a valid date in the format YYYY-MM-DD. Ensure the date is between June 16, 1995 (Day first APOD released) and today.');
+            alert('Please enter a valid date. Ensure the date is between June 16, 1995 (First APOD released) and today.');
         }
     });
 

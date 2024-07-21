@@ -15,14 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValidDate(month, day)) {
             fetchAPODsForBirthday(month, day);
         } else {
-            alert('Please enter a valid date.');
+            alert('Please enter a valid date. Example of valid dates: February 28, March 1.');
         }
     });
 
     // Function to validate the date
     function isValidDate(month, day) {
-        // Check if the month and day are valid
-        return /^[01]\d$/.test(month) && /^[0-3]\d$/.test(day) && day <= 31;
+        // Check if month and day are valid numbers
+        if (!/^[0-1][0-9]$/.test(month) || !/^[0-3][0-9]$/.test(day)) {
+            return false;
+        }
+
+        // Convert month and day to numbers
+        const monthNumber = parseInt(month, 10);
+        const dayNumber = parseInt(day, 10);
+
+        // Create a date object with the given month and day
+        const date = new Date(2000, monthNumber - 1, dayNumber);
+
+        // Check if the date object’s month and day match the input values
+        return date.getMonth() === monthNumber - 1 && date.getDate() === dayNumber;
     }
 
     // Function to fetch APODs for the specified birthday
@@ -30,9 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startYear = 1995; // The year the first APOD was released
         const endYear = new Date().getFullYear();
 
-//** REQUIREMENT 1: Create a list of promises to fetch APODs for each year from startYear to endYear. **//    
-        
-    const promises = [];
+        const promises = [];
 
         // Create a list of promises to fetch APODs for each year from startYear to endYear
         for (let year = startYear; year <= endYear; year++) {
@@ -41,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Wait for all promises to resolve and filter out null results
-//** REQUIREMENT 1: Creat an array to store APOD data  **//    
         const apods = await Promise.all(promises);
         displayCarousel(apods.filter(apod => apod));
     }
@@ -62,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to display the fetched APOD data in a carousel
-
-//** Requirement 2: Array analysis: analyze APODs array to determine wether each item is an imf or video and dynamically create HTML elements **//    
-    
     function displayCarousel(apods) {
         carousel.innerHTML = '';  // Clear previous images
         apods.forEach(apod => {
@@ -84,35 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-
-/**
- * This JavaScript file handles fetching and displaying
- * APODs for a specific birthday across multiple years.
- *
- * @event DOMContentLoaded - The DOMContentLoaded event ensures
- * the code runs only after the DOM is fully loaded.
- * @constant {string} apiKey - The API key required to fetch data from the NASA APOD API.
- * @constant {HTMLElement} searchBtn - The search button element.
- * @constant {HTMLElement} monthInput - The input field for the month.
- * @constant {HTMLElement} dayInput - The input field for the day.
- * @constant {HTMLElement} carousel - The carousel element.
- *
- * @function isValidDate - Function to validate the date.
- * @param {string} month - The month value.
- * @param {string} day - The day value.
- * @returns {boolean} - Returns true if the date is valid, false otherwise.
- *
- * @function fetchAPODsForBirthday - Function to fetch APODs for the specified birthday.
- * @param {string} month - The month value.
- * @param {string} day - The day value.
- * @returns {Promise<void>} - Returns a promise that resolves when all APODs are fetched.
- *
- * @function fetchAPOD - Function to fetch APOD data for a specific date from NASA API.
- * @param {string} date - The date in the format 'YYYY-MM-DD'.
- * @returns {Promise<object|null>} - Returns a promise that resolves with the APOD data or null if there is an error.
- *
- * @function displayCarousel - Function to display the fetched APOD data in a carousel.
- * @param {object[]} apods - An array of APOD objects.
- * @returns {void}
- */
