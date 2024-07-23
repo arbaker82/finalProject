@@ -11,20 +11,20 @@
 <body>
     <header>
         <a href="#main-content" class="skip-link">Skip to content</a>
-        <nav>
+        <nav role="navigation">
             <ul aria-label="Main navigation">
                 <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="birthday.html">Birthday APODs</a></li>
             </ul>
         </nav>
         <div class="headerContainer">
-           <a href="index.html" aria-label="logo is home/refresh page link">
-            <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
-           </a> 
+            <a href="index.html" aria-label="logo is home/refresh page link">
+                <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
+            </a>
             <div class="textContainer">
-            <h1>NASA Astronomy Picture of the Day (APOD)</h1>
-            <h2 class="catchPhrase">Explore the Universe One Day at a Time</h2>
-        </div>
+                <h1>NASA Astronomy Picture of the Day (APOD)</h1>
+                <h2 class="catchPhrase">Explore the Universe One Day at a Time</h2>
+            </div>
         </div>
     </header>
     <main id="main-content">
@@ -35,26 +35,26 @@
                 </a>
                 <iframe id="apod-video" src="" frameborder="0" allowfullscreen title="Astronomy Picture of the Day Video"></iframe>
             </div>
-            <h2 id="apod-title" aria-live="polite" tabindex="0"></h3>
+            <h2 id="apod-title" aria-live="polite" tabindex="0"></h2>
             <p id="apod-date" aria-live="polite" tabindex="0"></p>
             <p id="apod-desc" aria-live="polite" tabindex="0"></p>
         </section>
         <section id="search">
             <label for="search-date" class="search-label">Search APODs by Date</label>
-            <input type="date" id="search-date">
+            <input type="date" id="search-date" aria-label="Search APODs by date">
             <button id="search-btn">Search</button>
         </section>
     </main>
     <footer>
         <div class="footerContainer">
             <p> | Adam Baker | July 2024 </p>
-            <nav>
+            <nav role="navigation">
                 <ul>
                     <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developers first site about his dog Ruby-Doo.">Supervisory Board</a></li>
                 </ul>
             </nav>
-        </div>  
+        </div>
     </footer>
-    <script src="script.js"></script>       
+    <script src="script.js"></script>
 </body>
 </html>
