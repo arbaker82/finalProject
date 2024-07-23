@@ -10,6 +10,20 @@ html, body {
     background-attachment: fixed;
 }
 
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
 
 header {
     background-image: linear-gradient(to bottom, #00000060, #00000000); /* Gradient background */
@@ -186,3 +200,4 @@ img[src="nasalogo1.png"]:hover {
         font-size: 0.8em; /* Further reduce font size for very small screens */
     }
 }
+

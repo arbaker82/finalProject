@@ -10,36 +10,37 @@
 </head>
 <body>
     <header>
+        <a href="#main-content" class="skip-link">Skip to content</a>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+            <ul aria-label="Main navigation">
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="birthday.html">Birthday APODs</a></li>
             </ul>
         </nav>
         <div class="headerContainer">
-           <a href="index.html">
+           <a href="index.html" aria-label="logo is home/refresh page link">
             <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
            </a> 
             <div class="textContainer">
             <h1>NASA Astronomy Picture of the Day (APOD)</h1>
-            <h3 class="catchPhrase">Explore the Universe One Day at a Time</h3>
+            <h2 class="catchPhrase">Explore the Universe One Day at a Time</h2>
         </div>
         </div>
     </header>
-    <main>
-        <section id="apod">
+    <main id="main-content">
+        <section id="apod" aria-live="polite" tabindex="0">
             <div id="media-container">
                 <a id="apod-link" href="#" target="_blank">
                     <img id="apod-img" src="" alt="Astronomy Picture of the Day">
                 </a>
-                <iframe id="apod-video" src="" frameborder="0" allowfullscreen></iframe>
+                <iframe id="apod-video" src="" frameborder="0" allowfullscreen title="Astronomy Picture of the Day Video"></iframe>
             </div>
-            <h3 id="apod-title"></h3>
-            <p id="apod-date"></p>
-            <p id="apod-desc"></p>
+            <h2 id="apod-title" aria-live="polite" tabindex="0"></h3>
+            <p id="apod-date" aria-live="polite" tabindex="0"></p>
+            <p id="apod-desc" aria-live="polite" tabindex="0"></p>
         </section>
         <section id="search">
-            <h2>Search APODs by Date</h2>
+            <label for="search-date" class="search-label">Search APODs by Date</label>
             <input type="date" id="search-date">
             <button id="search-btn">Search</button>
         </section>
@@ -49,11 +50,11 @@
             <p> | Adam Baker | July 2024 </p>
             <nav>
                 <ul>
-                    <li><a href="https://arbaker82.github.io/rubyDoo/">Supervisory Board</a></li>
+                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="supervisory board: link to developers first site about his dog Ruby-Doo">Supervisory Board</a></li>
                 </ul>
             </nav>
-        </div>
+        </div>  
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js"></script>       
 </body>
 </html>

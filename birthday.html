@@ -9,28 +9,29 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
     <header>
         <nav>
-            <ul>
+            <ul aria-label="Main navigation">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="birthday.html">Birthday APODs</a></li>
+                <li><a href="birthday.html" aria-current="page">Birthday APODs</a></li>
             </ul>
         </nav>
         
         <div class="headerContainer">
-            <a href="index.html">  
+            <a href="index.html" aria-label="logo is home link">  
                 <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
             </a>  
             <div class="textContainer">
                 <h1>NASA APODs - Birthday Edition</h1>
-                <h3 class="catchPhrase">Your Birthday APODS Through the Years</h3>
+                <h2 class="catchPhrase">Your Birthday APODS Through the Years</h2>
             </div>
         </div>
     </header>
     
-    <main>
+    <main id="main-content">
         <section id="search">
-            <h2>Enter Your Birthday</h2>
+            <h2 aria-label="Enter Your Birthday" tabindex="0">Enter Your Birthday</h2>
             <div>
                 <label for="month">Month:</label>
                 <select id="month">
@@ -101,7 +102,7 @@
             <p> | Adam Baker | July 2024 </p>
             <nav>
                 <ul>
-                    <li><a href="https://arbaker82.github.io/rubyDoo/">Supervisory Board</a></li>
+                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="supervisory board: link to developers first site about his dog Ruby-Doo">Supervisory Board</a></li>
                 </ul>
             </nav>
         </div>
