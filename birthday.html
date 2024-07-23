@@ -11,7 +11,7 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to Content</a>
     <header>
-        <nav>
+        <nav role="navigation">
             <ul aria-label="Main navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="birthday.html" aria-current="page">Birthday APODs</a></li>
@@ -34,7 +34,7 @@
             <h2 aria-label="Enter Your Birthday" tabindex="0">Enter Your Birthday</h2>
             <div>
                 <label for="month">Month:</label>
-                <select id="month">
+                <select id="month" aria-label="Select month for birthday">
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -51,7 +51,7 @@
             </div>
             <div>
                 <label for="day">Day:</label>
-                <select id="day">
+                <select id="day" aria-label="Select day for birthday">
                     <option value="01">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -85,10 +85,10 @@
                     <option value="31">31</option>
                 </select>
             </div>
-            <button id="search-btn">Search</button>
+            <button id="search-btn" aria-label="Search for APODs by birthday">Search</button>
         </section>
         
-        <section id="carousel" class="carousel">
+        <section id="carousel" class="carousel" aria-live="polite">
             <!-- Images will be inserted here by JavaScript -->
         </section>
         
@@ -100,7 +100,7 @@
     <footer>
         <div class="footerContainer">
             <p> | Adam Baker | July 2024 </p>
-            <nav>
+            <nav role="navigation">
                 <ul>
                     <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developers first site about his dog Ruby-Doo.">Supervisory Board</a></li>
                 </ul>
