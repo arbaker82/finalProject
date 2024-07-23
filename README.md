@@ -6,9 +6,10 @@
 The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that allows users to view, search, and analyze the daily astronomical images provided by NASA. The application displays the image of the day, allows users to search for images by date, and provides additional information about each image.
 
 ## Features
-- View the NASA Astronomy Picture of the Day (APOD).
+- View the NASA Astronomy Picture of the Day (APOD) along with date, title and description.
 - Search for APOD images by date.
 - Aggregate all APODs for a mm/dd date. (ex. 'Your Birthday')
+- Accessibility testing with voice over.
 - Responsive design for both mobile and desktop.
 
 ## This project meets these requirements.  They are noted in the comments and referenced by their number assigned here. 

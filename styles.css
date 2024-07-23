@@ -5,24 +5,24 @@ html, body {
     flex-direction: column; /* Arrange children in a column */
     font-family: 'Exo', sans-serif; /* Set font-family to 'Exo' */
     align-items: center; /* Center items horizontally */
-    background-image: url(jwst1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: url(jwst1.jpg); /* Set background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-attachment: fixed; /* Fix background image position */
 }
 
 .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-    transition: top 0.3s;
+    position: absolute; /* Position element absolutely */
+    top: -40px; /* Position off-screen initially */
+    left: 0; /* Align to the left */
+    background: #000; /* Set background color */
+    color: white; /* Set text color */
+    padding: 8px; /* Padding around text */
+    z-index: 100; /* Ensure it's above other elements */
+    transition: top 0.3s; /* Smooth transition for top property */
 }
 
 .skip-link:focus {
-    top: 0;
+    top: 0; /* Move into view when focused */
 }
 
 header {
@@ -61,7 +61,7 @@ footer {
 }
 
 .catchPhrase {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Font size */
     animation: fadeIn 4s; /* Apply fadeIn animation */
 }
 
@@ -85,7 +85,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff0000d4; /* Change color on hover */
- 
 }
 
 main {
@@ -99,14 +98,12 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
     background-color: rgb(37, 37, 37); /* Background color */
     border-radius: 8px; /* Rounded corners */
-    color: white;
-    box-sizing: border-box;
-    
+    color: white; /* Text color */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 section {
     width: 100%; /* Full width */
-    
 }
 
 #apod img {
@@ -200,4 +197,3 @@ img[src="nasalogo1.png"]:hover {
         font-size: 0.8em; /* Further reduce font size for very small screens */
     }
 }
-
