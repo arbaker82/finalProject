@@ -12,19 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
 
-    const datePattern = /^\d{4}-\d{2}-\d{2}$/; // 3. Regular expression for date validation.
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/; // REQ 3. Regular expression for date validation.
 
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (isValidDate(date)) {
-            fetchAPOD(date); // 10. Fetch data from the API.
+            fetchAPOD(date); // REQ 6. Fetch data from the API.
         } else {
             alert('Please enter a valid date. Ensure the date is between June 16, 1995 (First APOD released) and today.');
         }
     });
 
     function isValidDate(dateString) {
-        if (!datePattern.test(dateString)) return false; // 3. Validate date format.
+        if (!datePattern.test(dateString)) return false; // REQ 3. Validate date format.
 
         const date = new Date(dateString);
         const earliestDate = new Date('1995-06-16');
@@ -39,17 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error fetching APOD for ${date}`);
 
-            const data = await response.json(); // 10. Fetch data from the API.
-            displayAPOD(data); // 10. Use the fetched data to update the UI.
+            const data = await response.json(); // REQ 6. Fetch data from the API.
+            displayAPOD(data); // REQ 6. Use the fetched data to update the UI.
         } catch (error) {
             console.error('Error fetching APOD:', error);
         }
     }
 
     function displayAPOD(data) {
-        apodTitle.textContent = data.title; // 4. Display APOD title.
-        apodDate.textContent = data.date; // 4. Display APOD date.
-        apodDesc.textContent = data.explanation; // 4. Display APOD description.
+        apodTitle.textContent = data.title; // REQ 4. Display APOD title.
+        apodDate.textContent = data.date; // REQ 4. Display APOD date.
+        apodDesc.textContent = data.explanation; // REQ 4. Display APOD description.
 
         if (data.media_type === 'image') {
             apodImg.src = data.url;
@@ -63,5 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    fetchAPOD(); // 10. Fetch today's APOD on page load.
+    fetchAPOD(); // REQ 6. Fetch today's APOD on page load.
 });

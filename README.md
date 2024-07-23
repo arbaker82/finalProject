@@ -16,7 +16,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 3. Use a regular expression to validate user input and either prevent the invalid inpout or inform the user about it.
 4. Analyze text and display useful information about it. 
 5. Create a function that accepts two or more input paramaters and returns a value that is determined by the inputs.
-10. Retrieve data from a third-party API and use it to display something in your app.
+6. Retrieve data from a third-party API and use it to display something in your app.
 
 
 

@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const month = monthInput.value;
         const day = dayInput.value;
         if (isValidDate(month, day)) {
-            fetchAPODsForBirthday(month, day); // 10. Retrieve data from a third-party API and use it to display something in the app.
+            fetchAPODsForBirthday(month, day); // REQ 6. Retrieve data from a third-party API and use it to display something in the app.
         } else {
             alert('Please enter a valid date. Example of valid dates: February 28, March 1.'); // 3. Use a regular expression to validate user input and either prevent the invalid input or inform the user about it.
         }
     });
 
-    // 3. Function to validate the date using a regular expression
+    // REQ 3. Function to validate the date using a regular expression
     function isValidDate(month, day) {
         if (!/^[0-1][0-9]$/.test(month) || !/^[0-3][0-9]$/.test(day)) {
             return false;
@@ -36,26 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return date.getMonth() === monthNumber - 1 && date.getDate() === dayNumber;
     }
 
-    // 1. Function to fetch APODs for the specified birthday
+    // REQ 1. Function to fetch APODs for the specified birthday
     async function fetchAPODsForBirthday(month, day) {
         const startYear = 1995; // The year the first APOD was released
         const endYear = new Date().getFullYear();
 
         const promises = [];
 
-        // 1. Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
+        // REQ 1. Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
         // Create a list of promises to fetch APODs for each year from startYear to endYear
         for (let year = startYear; year <= endYear; year++) {
             const date = `${year}-${month}-${day}`;
-            promises.push(fetchAPOD(date)); // 10. Retrieve data from a third-party API and use it to display something in the app.
+            promises.push(fetchAPOD(date)); // REQ 6. Retrieve data from a third-party API and use it to display something in the app.
         }
 
         // Wait for all promises to resolve and filter out null results
         const apods = await Promise.all(promises);
-        displayCarousel(apods.filter(apod => apod)); // 2. Analyze data that is stored in arrays, objects, sets, or maps and display information about it in your app.
+        displayCarousel(apods.filter(apod => apod)); // REQ 2. Analyze data that is stored in arrays, objects, sets, or maps and display information about it in your app.
     }
 
-    // 10. Function to fetch APOD data for a specific date from NASA API
+    // REQ 6. Function to fetch APOD data for a specific date from NASA API
     async function fetchAPOD(date) {
         const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
         try {
@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error(`Error fetching APOD for ${date}`);
             }
-            return await response.json(); // 10. Retrieve data from a third-party API and use it to display something in the app.
+            return await response.json(); // REQ 6. Retrieve data from a third-party API and use it to display something in the app.
         } catch (error) {
             console.error('Error fetching APOD:', error);
             return null;
         }
     }
 
-    // 2. Function to display the fetched APOD data in a carousel
+    // REQ 2. Function to display the fetched APOD data in a carousel
     function displayCarousel(apods) {
         carousel.innerHTML = '';  // Clear previous images
 
