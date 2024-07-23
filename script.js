@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValidDate(date)) {
             fetchAPOD(date); // REQ 6. Fetch data from the API.
         } else {
-            alert('Please enter a valid date. Ensure the date is between June 16, 1995 (First APOD released) and today.');
+            alert('Please enter a valid date. Ensure the date is between June 16, 1995 (First APOD released) and today.'); // Inform the user about invalid input.
         }
     });
 
+    // Function to validate date
     function isValidDate(dateString) {
-        if (!datePattern.test(dateString)) return false; // REQ 3. Validate date format.
+        if (!datePattern.test(dateString)) return false; // Validate date format.
 
         const date = new Date(dateString);
         const earliestDate = new Date('1995-06-16');
@@ -33,23 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return date >= earliestDate && date <= today;
     }
 
+    // Function to fetch APOD data for a specific date
     async function fetchAPOD(date = '') {
         const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}${date ? `&date=${date}` : ''}`;
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Error fetching APOD for ${date}`);
 
-            const data = await response.json(); // REQ 6. Fetch data from the API.
-            displayAPOD(data); // REQ 6. Use the fetched data to update the UI.
+            const data = await response.json(); // Fetch data from the API.
+            displayAPOD(data); // Use the fetched data to update the UI.
         } catch (error) {
             console.error('Error fetching APOD:', error);
         }
     }
 
+    // Function to display the fetched APOD data
     function displayAPOD(data) {
         apodTitle.textContent = data.title; // REQ 4. Display APOD title.
-        apodDate.textContent = data.date; // REQ 4. Display APOD date.
-        apodDesc.textContent = data.explanation; // REQ 4. Display APOD description.
+        apodDate.textContent = data.date; // Display APOD date.
+        apodDesc.textContent = data.explanation; // Display APOD description.
 
         if (data.media_type === 'image') {
             apodImg.src = data.url;
@@ -63,5 +66,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    fetchAPOD(); // REQ 6. Fetch today's APOD on page load.
+    fetchAPOD(); // Fetch today's APOD on page load.
 });
