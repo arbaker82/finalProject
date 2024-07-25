@@ -1,29 +1,29 @@
-const express = require('express');
+import express from 'express';
+import fetch from 'node-fetch';
+import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Load environment variables from .env
+
 const app = express();
 const port = 3000;
+const apiKey = process.env.NASA_API_KEY; // Use environment variable for API key
 
-// Middleware to serve static files
 app.use(express.static('public'));
 
-// Endpoint to fetch APOD data
 app.get('/apod', async (req, res) => {
-    const fetch = (await import('node-fetch')).default;
-    const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ';
-    const date = req.query.date;
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+    const { date } = req.query;
+    const url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${apiKey}`;
 
     try {
         const response = await fetch(url);
-        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         res.json(data);
     } catch (error) {
-        console.error('Error fetching APOD:', error);
-        res.status(500).send('Error fetching APOD');
+        res.status(500).json({ error: 'Error fetching data from NASA API' });
     }
 });
 
-// Start the server
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
