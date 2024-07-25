@@ -2,8 +2,6 @@
 
 # github Pages link: https://arbaker82.github.io/finalProject/index.html
 
-## API Key google drive: https://drive.google.com/file/d/1re1F2W0s54wG2kstH5gNBdx1bTs6Vc6u/view?usp=sharing
-
 ## Project Description
 The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that allows users to view, search, and analyze the daily astronomical images provided by NASA. The application displays the image of the day, allows users to search for images by date, and provides additional information about each image.
 
@@ -24,9 +22,13 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 
 
-## Instructions to Run the Project
-1. Clone the repository:
+## Dependencies: Node, npm, express.
 
-2. Navigate to the project directory:
+
+## Instructions to Run the Project **TODO: UPDATE WITH MORE DETAIL**
+
+1. Clone the repository: 
+
+2. Get server running.
    
-3. Open `index.html` in your web browser.
+3. Point browser to http://localhost:3000.
