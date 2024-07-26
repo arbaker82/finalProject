@@ -6,8 +6,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 ## Features
 - View the NASA Astronomy Picture of the Day (APOD) along with date, title and description.
 - Search for APOD images by date.
-- Aggregate all APODs for a mm/dd date. (ex. 'Your Birthday')
-- Accessibility testing with voice over.
+- Aggregate and display all APODs for a given mm/dd date. (ex. 'Your Birthday')
 - Responsive design for both mobile and desktop.
 
 ## This project meets these requirements.  They are noted in the comments and referenced by their number assigned here. 
