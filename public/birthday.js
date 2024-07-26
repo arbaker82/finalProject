@@ -1,91 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = 'oedgW1nDvvL0CMEsXv6wpIZ3D2ECcMPRlOF357sZ'; // This key will be ignored, but it's required for validation.
-
-    // DOM elements for the birthday search
+    // Elements for birthday input
+    const monthSelect = document.getElementById('month');
+    const daySelect = document.getElementById('day');
     const searchBtn = document.getElementById('search-btn');
-    const monthInput = document.getElementById('month');
-    const dayInput = document.getElementById('day');
     const carousel = document.getElementById('carousel');
 
-    // Event listener for the search button
+    // Fetch APOD data from the server for a range of years
+    const fetchAPODsForBirthday = async (month, day) => {
+        try {
+            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const apodData = await response.json();
+            displayAPODs(apodData);
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
+    };
+
+    // Display APODs in the carousel
+    const displayAPODs = (apodData) => {
+        carousel.innerHTML = ''; // Clear existing content
+        apodData.forEach((apod) => {
+            const div = document.createElement('div');
+            div.className = 'carousel-item';
+            
+            const img = document.createElement('img');
+            img.src = apod.url;
+            img.alt = apod.title;
+            img.className = 'carousel-image';
+
+            const title = document.createElement('h3');
+            title.textContent = apod.title;
+            title.className = 'carousel-title';
+
+            const date = document.createElement('p');
+            date.textContent = apod.date;
+            date.className = 'carousel-date';
+
+            const desc = document.createElement('p');
+            desc.textContent = apod.explanation;
+            desc.className = 'carousel-description';
+
+            div.appendChild(img);
+            div.appendChild(title);
+            div.appendChild(date);
+            div.appendChild(desc);
+
+            carousel.appendChild(div);
+        });
+    };
+
+    // Event listener for search button
     searchBtn.addEventListener('click', () => {
-        const month = monthInput.value;
-        const day = dayInput.value;
-        if (isValidDate(month, day)) {
+        const month = monthSelect.value;
+        const day = daySelect.value;
+        if (month && day) {
             fetchAPODsForBirthday(month, day);
         } else {
-            alert('Please enter a valid date. Example of valid dates: February 28, March 1.');
+            alert('Please select both month and day');
         }
     });
-
-    // Function to validate the date using a regular expression
-    function isValidDate(month, day) {
-        if (!/^[0-1][0-9]$/.test(month) || !/^[0-3][0-9]$/.test(day)) {
-            return false;
-        }
-
-        const monthNumber = parseInt(month, 10);
-        const dayNumber = parseInt(day, 10);
-
-        const date = new Date(2000, monthNumber - 1, dayNumber);
-
-        return date.getMonth() === monthNumber - 1 && date.getDate() === dayNumber;
-    }
-
-    // Function to fetch APODs for the specified birthday
-    async function fetchAPODsForBirthday(month, day) {
-        const startYear = 1995;
-        const endYear = new Date().getFullYear();
-
-        const promises = [];
-
-        for (let year = startYear; year <= endYear; year++) {
-            const date = `${year}-${month}-${day}`;
-            promises.push(fetchAPOD(date));
-        }
-
-        const apods = await Promise.all(promises);
-        displayCarousel(apods.filter(apod => apod));
-    }
-
-    // Function to fetch APOD data for a specific date from NASA API
-    async function fetchAPOD(date) {
-        const url = `/apod?date=${date}`;
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Error fetching APOD for ${date}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error fetching APOD:', error);
-            return null;
-        }
-    }
-
-    // Function to display the fetched APOD data in a carousel
-    function displayCarousel(apods) {
-        carousel.innerHTML = '';
-
-        apods.forEach(apod => {
-            if (apod) {
-                const mediaContainer = document.createElement('a');
-                mediaContainer.href = apod.hdurl || apod.url;
-                mediaContainer.target = '_blank';
-
-                const mediaElement = document.createElement(apod.media_type === 'image' ? 'img' : 'iframe');
-                mediaElement.src = apod.url;
-                mediaElement.alt = apod.title;
-                if (apod.media_type === 'video') {
-                    mediaElement.width = "560";
-                    mediaElement.height = "315";
-                    mediaElement.frameBorder = "0";
-                    mediaElement.allowFullscreen = true;
-                }
-
-                mediaContainer.appendChild(mediaElement);
-                carousel.appendChild(mediaContainer);
-            }
-        });
-    }
 });

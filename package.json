@@ -1,17 +1,15 @@
 {
-  "name": "finalproject",
+  "name": "nasa-apod-viewer",
   "version": "1.0.0",
-  "description": "# github Pages link: https://arbaker82.github.io/finalProject/index.html",
-  "main": "birthday.js",
+  "description": "A NASA APOD viewer website",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "node-fetch": "^3.3.2"
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.1"
   }
 }
