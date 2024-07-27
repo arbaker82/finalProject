@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apodTitle = document.getElementById('apod-title');
     const apodDate = document.getElementById('apod-date');
     const apodDesc = document.getElementById('apod-desc');
+    const apodLink = document.getElementById('apod-link');
 
     // Elements for date input
     const searchDate = document.getElementById('search-date');
@@ -44,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
             apodImg.alt = data.title;
             apodImg.style.display = 'block';
             apodVideo.style.display = 'none';
+            apodLink.href = data.hdurl || data.url;
         } else if (data.media_type === 'video') {
             apodVideo.src = data.url;
             apodVideo.style.display = 'block';
             apodImg.style.display = 'none';
+            apodLink.href = data.url;
         }
     };
 

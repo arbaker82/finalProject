@@ -50,6 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = 'carousel-item';
 
+            const link = document.createElement('a');
+            link.href = apod.hdurl || apod.url;
+            link.target = '_blank';
+
             const img = document.createElement('img');
             img.src = apod.url;
             img.alt = apod.title;
@@ -67,7 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
             desc.textContent = apod.explanation;
             desc.className = 'carousel-description';
 
-            div.appendChild(img);
+            link.appendChild(img);
+            div.appendChild(link);
             div.appendChild(title);
             div.appendChild(date);
             div.appendChild(desc);
