@@ -10,15 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
 
+    // Regular expression for validating date in YYYY-MM-DD format
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Requirement 3
+
     // Fetch APOD data from the server
     const fetchAPOD = async (date) => {
+        // Requirement 3: Validate date parameter using regex
+        if (!dateRegex.test(date)) {
+            alert('Invalid date format. Please use YYYY-MM-DD.');
+            return;
+        }
+
         try {
-            const response = await fetch(`/apod?date=${date}`);
+            const response = await fetch(`/apod?date=${date}`); // Requirement 10
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            displayAPOD(data);
+            displayAPOD(data); // Requirement 4
         } catch (error) {
             console.error('Fetch error:', error);
         }
@@ -29,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
         apodDesc.textContent = data.explanation;
-        
+
         if (data.media_type === 'image') {
             apodImg.src = data.url;
             apodImg.alt = data.title;
@@ -46,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (date) {
-            fetchAPOD(date);
+            fetchAPOD(date); // Requirement 5
         } else {
             alert('Please select a date');
         }
     });
 
     // Initial fetch for today's APOD
-    fetchAPOD(new Date().toISOString().split('T')[0]);
+    fetchAPOD(new Date().toISOString().split('T')[0]); // Requirement 10
 });
