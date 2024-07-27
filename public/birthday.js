@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.getElementById('carousel');
 
     // Regular expressions for validating month and day
-    const monthRegex = /^(0[1-9]|1[0-2])$/; // Requirement 3
-    const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/; // Requirement 3
+    const monthRegex = /^(0[1-9]|1[0-2])$/; // REQ 3
+    const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/; // REQ 3
 
     // Fetch APOD data from the server for a range of years
     const fetchAPODsForBirthday = async (month, day) => {
-        // Requirement 3: Validate month and day parameters using regex
+        // REQ 3: Validate month and day parameters using regex
         if (!monthRegex.test(month)) {
             alert('Invalid month. Please select a valid month.');
             return;
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // Requirement 10
+            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // REQ 6
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const apodData = await response.json();
-            displayAPODs(apodData); // Requirement 2
+            displayAPODs(apodData); // REQ 2
         } catch (error) {
             console.error('Fetch error:', error);
         }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const month = monthSelect.value;
         const day = daySelect.value;
         if (month && day) {
-            fetchAPODsForBirthday(month, day); // Requirement 5
+            fetchAPODsForBirthday(month, day); // REQ 5
         } else {
             alert('Please select both month and day');
         }

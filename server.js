@@ -10,16 +10,16 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 // Regular expression for validating date in YYYY-MM-DD format
-const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Requirement 3
+const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // REQ 3
 // Regular expressions for validating month and day
-const monthRegex = /^(0[1-9]|1[0-2])$/; // Requirement 3
-const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/; // Requirement 3
+const monthRegex = /^(0[1-9]|1[0-2])$/; // REQ 3
+const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/; // REQ 3
 
 // Endpoint to fetch APOD for a specific date
 app.get('/apod', async (req, res) => {
     const date = req.query.date;
 
-    // Requirement 3: Validate date parameter using regex
+    // REQ 3: Validate date parameter using regex
     if (!dateRegex.test(date)) {
         return res.status(400).json({ error: 'Invalid date format. Please use YYYY-MM-DD.' });
     }
@@ -33,7 +33,7 @@ app.get('/apod', async (req, res) => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        res.json(data); // Requirement 10
+        res.json(data); // REQ 6
     } catch (error) {
         console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch APOD' });
@@ -45,7 +45,7 @@ app.get('/birthday-apods', async (req, res) => {
     const month = req.query.month;
     const day = req.query.day;
 
-    // Requirement 3: Validate month and day parameters using regex
+    // REQ 3: Validate month and day parameters using regex
     if (!monthRegex.test(month)) {
         return res.status(400).json({ error: 'Invalid month. Please use MM format.' });
     }
@@ -64,9 +64,9 @@ app.get('/birthday-apods', async (req, res) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return await response.json(); // Requirement 10
+            return await response.json(); // REQ 6
         }));
-        res.json(apodData); // Requirement 10
+        res.json(apodData); // REQ 6
     } catch (error) {
         console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch birthday APODs' });
@@ -74,5 +74,5 @@ app.get('/birthday-apods', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`); // Requirement 13
+    console.log(`Server is running on port ${PORT}`); // REQ 7
 });

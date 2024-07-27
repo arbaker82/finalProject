@@ -11,23 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
 
     // Regular expression for validating date in YYYY-MM-DD format
-    const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Requirement 3
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // REQ 3
 
     // Fetch APOD data from the server
     const fetchAPOD = async (date) => {
-        // Requirement 3: Validate date parameter using regex
+        // REQ 3: Validate date parameter using regex
         if (!dateRegex.test(date)) {
             alert('Invalid date format. Please use YYYY-MM-DD.');
             return;
         }
 
         try {
-            const response = await fetch(`/apod?date=${date}`); // Requirement 10
+            const response = await fetch(`/apod?date=${date}`); // REQ 6
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            displayAPOD(data); // Requirement 4
+            displayAPOD(data); // REQ 4
         } catch (error) {
             console.error('Fetch error:', error);
         }
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (date) {
-            fetchAPOD(date); // Requirement 5
+            fetchAPOD(date); // REQ 5
         } else {
             alert('Please select a date');
         }
     });
 
     // Initial fetch for today's APOD
-    fetchAPOD(new Date().toISOString().split('T')[0]); // Requirement 10
+    fetchAPOD(new Date().toISOString().split('T')[0]); // REQ 6
 });
