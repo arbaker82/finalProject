@@ -1,29 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elements for displaying APOD
     const apodImg = document.getElementById('apod-img');
     const apodVideo = document.getElementById('apod-video');
     const apodTitle = document.getElementById('apod-title');
     const apodDate = document.getElementById('apod-date');
     const apodDesc = document.getElementById('apod-desc');
-    const apodLink = document.getElementById('apod-link');
-
-    // Elements for date input
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
 
-    // Regular expression for validating date in YYYY-MM-DD format
-    const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // REQ 3
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-    // Fetch APOD data from the server
+    const startDate = new Date('1995-06-16');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const isDateValid = (date) => {
+        const inputDate = new Date(date);
+        return inputDate >= startDate && inputDate <= today;
+    };
+
     const fetchAPOD = async (date) => {
-        // REQ 3: Validate date parameter using regex
         if (!dateRegex.test(date)) {
             alert('Invalid date format. Please use YYYY-MM-DD.');
             return;
         }
 
+        if (!isDateValid(date)) {
+            alert(`Date must be between ${startDate.toISOString().split('T')[0]} and ${today.toISOString().split('T')[0]}. Please try again.`);
+            return;
+        }
+
         try {
-            const response = await fetch(`/apod?date=${date}`); // REQ 5
+            const response = await fetch(`/apod?date=${date}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -34,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Display APOD data
     const displayAPOD = (data) => {
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
@@ -45,25 +51,29 @@ document.addEventListener('DOMContentLoaded', () => {
             apodImg.alt = data.title;
             apodImg.style.display = 'block';
             apodVideo.style.display = 'none';
-            apodLink.href = data.hdurl || data.url;
+            apodImg.dataset.hires = data.hdurl;
         } else if (data.media_type === 'video') {
             apodVideo.src = data.url;
             apodVideo.style.display = 'block';
             apodImg.style.display = 'none';
-            apodLink.href = data.url;
         }
     };
 
-    // Event listener for search button
+    apodImg.addEventListener('click', () => {
+        const hiresUrl = apodImg.dataset.hires;
+        if (hiresUrl) {
+            window.open(hiresUrl, '_blank');
+        }
+    });
+
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (date) {
-            fetchAPOD(date); // REQ 4
+            fetchAPOD(date);
         } else {
             alert('Please select a date');
         }
     });
 
-    // Initial fetch for today's APOD
-    fetchAPOD(new Date().toISOString().split('T')[0]); // REQ 5
+    fetchAPOD(new Date().toISOString().split('T')[0]);
 });
