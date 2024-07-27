@@ -7,17 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
 
-    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Regular expression to validate date (REQUIREMENT 3)
 
     const startDate = new Date('1995-06-16');
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    // Function to check if a date is within the valid range (REQUIREMENT 4)
     const isDateValid = (date) => {
         const inputDate = new Date(date);
         return inputDate >= startDate && inputDate <= today;
     };
 
+    // Function to fetch APOD data
     const fetchAPOD = async (date) => {
         if (!dateRegex.test(date)) {
             alert('Invalid date format. Please use YYYY-MM-DD.');
@@ -30,17 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/apod?date=${date}`);
+            const response = await fetch(`/apod?date=${date}`); // API call to the server (REQUIREMENT 5)
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            displayAPOD(data);
+            displayAPOD(data); // Display the fetched APOD data
         } catch (error) {
             console.error('Fetch error:', error);
         }
     };
 
+    // Function to display APOD data
     const displayAPOD = (data) => {
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Event listener for image click to open high-resolution image
     apodImg.addEventListener('click', () => {
         const hiresUrl = apodImg.dataset.hires;
         if (hiresUrl) {
@@ -66,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Event listener for the search button
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (date) {
@@ -75,5 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Fetch the APOD for today's date on page load
     fetchAPOD(new Date().toISOString().split('T')[0]);
 });

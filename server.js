@@ -1,15 +1,15 @@
-import express from 'express';
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
+import express from 'express'; // Import Express.js framework
+import fetch from 'node-fetch'; // Import node-fetch to make API requests
+import dotenv from 'dotenv'; // Import dotenv to manage environment variables
 
-dotenv.config();
+dotenv.config(); // Load environment variables from a .env file
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const app = express(); // Initialize an Express application
+const PORT = process.env.PORT || 3000; // Set the port for the server
 
-app.use(express.static('public'));
+app.use(express.static('public')); // Serve static files from the 'public' directory
 
-// Regular expressions for validating date, month, and day
+// Regular expressions for validating date, month, and day (REQUIREMENT 3)
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const monthRegex = /^(0[1-9]|1[0-2])$/;
 const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
@@ -18,13 +18,13 @@ const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
 const startDate = new Date('1995-06-16');
 const endDate = new Date();  // Today's date
 
-// Function to check if a date is within the valid range
+// Function to check if a date is within the valid range (REQUIREMENT 4)
 const isValidDate = (date) => {
     const d = new Date(date);
     return d >= startDate && d <= endDate;
 };
 
-// Endpoint to fetch APOD for a specific date
+// Endpoint to fetch APOD for a specific date (REQUIREMENT 6)
 app.get('/apod', async (req, res) => {
     const date = req.query.date;
 
@@ -37,7 +37,7 @@ app.get('/apod', async (req, res) => {
     }
 
     const apiKey = process.env.NASA_API_KEY;
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`; // URL to fetch APOD (REQUIREMENT 5)
 
     try {
         const response = await fetch(url);
@@ -54,7 +54,7 @@ app.get('/apod', async (req, res) => {
     }
 });
 
-// Endpoint to fetch APODs for a specific birthday across multiple years
+// Endpoint to fetch APODs for a specific birthday across multiple years (REQUIREMENT 6)
 app.get('/birthday-apods', async (req, res) => {
     const month = req.query.month;
     const day = req.query.day;
@@ -67,7 +67,7 @@ app.get('/birthday-apods', async (req, res) => {
     }
 
     const apiKey = process.env.NASA_API_KEY;
-    const years = Array.from({ length: 20 }, (_, i) => new Date().getFullYear() - i);
+    const years = Array.from({ length: 20 }, (_, i) => new Date().getFullYear() - i); // Create an array of the last 20 years (REQUIREMENT 1)
 
     try {
         const apodData = await Promise.all(years.map(async (year) => {
@@ -76,7 +76,7 @@ app.get('/birthday-apods', async (req, res) => {
                 console.log(`Skipping invalid date: ${date}`);
                 return null;  // Skip invalid dates
             }
-            const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+            const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`; // URL to fetch APOD (REQUIREMENT 5)
             console.log(`Fetching APOD for date: ${date}`);
             const response = await fetch(url);
             if (!response.ok) {
