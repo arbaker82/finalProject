@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.getElementById('carousel');
 
     // Regular expressions for validating month and day
-    const monthRegex = /^(0[1-9]|1[0-2])$/; // REQ 3
-    const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/; // REQ 3
+    const monthRegex = /^(0[1-9]|1[0-2])$/;
+    const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
 
     // Fetch APOD data from the server for a range of years
     const fetchAPODsForBirthday = async (month, day) => {
-        // REQ 3: Validate month and day parameters using regex
+        // Validate month and day parameters using regex
         if (!monthRegex.test(month)) {
             alert('Invalid month. Please select a valid month.');
             return;
@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // REQ 5
+            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`);
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                const errorText = await response.text();
+                console.error(`Fetch error: ${errorText}`);
+                throw new Error(`Network response was not ok: ${errorText}`);
             }
             const apodData = await response.json();
-            displayAPODs(apodData); // REQ 2
+            displayAPODs(apodData);
         } catch (error) {
             console.error('Fetch error:', error);
         }
@@ -36,10 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Display APODs in the carousel
     const displayAPODs = (apodData) => {
         carousel.innerHTML = ''; // Clear existing content
+
+        if (apodData.length === 0) {
+            const message = document.createElement('p');
+            message.textContent = 'No APODs available for the selected date range.';
+            carousel.appendChild(message);
+            return;
+        }
+
         apodData.forEach((apod) => {
             const div = document.createElement('div');
             div.className = 'carousel-item';
-            
+
             const img = document.createElement('img');
             img.src = apod.url;
             img.alt = apod.title;
@@ -71,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const month = monthSelect.value;
         const day = daySelect.value;
         if (month && day) {
-            fetchAPODsForBirthday(month, day); // REQ 4
+            fetchAPODsForBirthday(month, day);
         } else {
             alert('Please select both month and day');
         }
