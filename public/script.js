@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/apod?date=${date}`); // REQ 6
+            const response = await fetch(`/apod?date=${date}`); // REQ 5
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            displayAPOD(data); // REQ 4
+            displayAPOD(data);
         } catch (error) {
             console.error('Fetch error:', error);
         }
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn.addEventListener('click', () => {
         const date = searchDate.value;
         if (date) {
-            fetchAPOD(date); // REQ 5
+            fetchAPOD(date); // REQ 4
         } else {
             alert('Please select a date');
         }
     });
 
     // Initial fetch for today's APOD
-    fetchAPOD(new Date().toISOString().split('T')[0]); // REQ 6
+    fetchAPOD(new Date().toISOString().split('T')[0]); // REQ 5
 });

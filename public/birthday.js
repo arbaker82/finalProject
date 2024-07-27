@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // REQ 6
+            const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // REQ 5
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const month = monthSelect.value;
         const day = daySelect.value;
         if (month && day) {
-            fetchAPODsForBirthday(month, day); // REQ 5
+            fetchAPODsForBirthday(month, day); // REQ 4
         } else {
             alert('Please select both month and day');
         }

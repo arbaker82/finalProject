@@ -27,17 +27,14 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 	    •	Month and day validation regex: const monthRegex = /^(0[1-9]|1[0-2])$/; and const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
 	    •	Validation checks for input values.
 		
-	REQ 4: Analyze text and display useful information about it.
-	    •	APOD’s title, date, and description are analyzed and displayed in the UI.
-		
-	REQ 5: Create a function that accepts two or more input parameters and returns a value that is calculated or determined by the inputs.
+	REQ 4: Create a function that accepts two or more input parameters and returns a value that is calculated or determined by the inputs.
 	    •	Function fetchAPODsForBirthday(month, day) to fetch and display APODs based on input parameters.
 	    •	Function fetchAPOD(date) to fetch and display APOD based on the date parameter.
 		
-	REQ 6: Retrieve data from a third-party API and use it to display something within your app.
+	REQ 5: Retrieve data from a third-party API and use it to display something within your app.
 	    •	Fetching APOD data from NASA API for both specific dates and birthdays across multiple years.
 		
-	REQ 7: Create a Node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route.
+	REQ 6: Create a Node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route.
 	    •	Express server with /apod and /birthday-apods routes.
 
 ## Dependencies: Node, Express, dotenv

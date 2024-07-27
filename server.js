@@ -33,7 +33,7 @@ app.get('/apod', async (req, res) => {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        res.json(data); // REQ 6
+        res.json(data); // REQ 5
     } catch (error) {
         console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch APOD' });
@@ -64,9 +64,9 @@ app.get('/birthday-apods', async (req, res) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return await response.json(); // REQ 6
+            return await response.json(); // REQ 5
         }));
-        res.json(apodData); // REQ 6
+        res.json(apodData); // REQ 5
     } catch (error) {
         console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch birthday APODs' });
@@ -74,5 +74,5 @@ app.get('/birthday-apods', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`); // REQ 7
+    console.log(`Server is running on port ${PORT}`); // REQ 6
 });
