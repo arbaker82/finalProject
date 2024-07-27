@@ -11,7 +11,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 ## Requirements met	
 1.	Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
-	•	Met: In birthday.js, you use an array years to store the years for which APODs are fetched.
+	•	Met: In birthday.js, used an array years to store the years for which APODs are fetched.
 	•	Met: In birthday.js, the monthDayMap object is used to validate the day based on the selected month.
 2.	Analyze data that is stored in arrays, objects, sets, or maps and display information about it in your app.
 	•	Met: In birthday.js, the function displayBirthdayAPODs iterates over the apods array to display the APODs in the carousel.
@@ -24,7 +24,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 	•	Met: In server.js, the endpoints /apod and /birthday-apods fetch data from the NASA APOD API.
 	•	Met: In script.js and birthday.js, the fetched data is displayed on the web page.
 6.	Create a Node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route.
-	•	Met: In server.js, you create an Express.js server and serve routes /apod and /birthday-apods.
+	•	Met: In server.js, created an Express.js server and serve routes /apod and /birthday-apods.
 
 ## Dependencies: Node, Express, dotenv
 
