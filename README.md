@@ -34,15 +34,18 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 	7.	Requirement 13: Create a Node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route.
 	    •	Express server with /apod and /birthday-apods routes.
 
-
-
-## Dependencies: Node, npm, express.
-
+## Dependencies: Node, Express, dotenv
 
 ## Instructions to Run the Project **TODO: UPDATE WITH MORE DETAIL**
 
-1. Clone the repository: 
+1. Clone the repository.
 
-2. Get server running.
+2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
-3. Point browser to http://localhost:3000.
+3. Input terminal commands to initialize npm, install express and dotenv. 
+    # Terminal Commands
+    npm init -y
+    npm install express
+    npm install dotenv
+
+4. Point browser to http://localhost:3000.
