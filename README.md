@@ -42,7 +42,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 ## Dependencies: Node, Express, dotenv
 
-## Instructions to Run the Project **TODO: UPDATE WITH MORE DETAIL**
+## Instructions to Run the Project 
 
 1. Clone the repository.
 
