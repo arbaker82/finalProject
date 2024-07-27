@@ -19,11 +19,11 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 	    •	The data object is analyzed and displayed with APOD’s title, date, and description.
 		
 	REQ 3: Use a regular expression to validate user input and either prevent the invalid input or inform the user about it.
-	    •	Server-side validation:
+	    Server-side validation:
 	    •	Date validation regex: const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 	    •	Month validation regex: const monthRegex = /^(0[1-9]|1[0-2])$/;
 	    •	Day validation regex: const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
-	    •	Client-side validation:
+	    Client-side validation:
 	    •	Month and day validation regex: const monthRegex = /^(0[1-9]|1[0-2])$/; and const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
 	    •	Validation checks for input values.
 		
@@ -45,7 +45,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
-3. Input terminal commands to initialize npm, install express and dotenv. 
+3. Input terminal commands to initialize npm, install express and dotenv for environment variables. 
     # Terminal Commands
     npm init -y
     npm install express
