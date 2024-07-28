@@ -35,9 +35,14 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
 3. Input terminal commands to initialize npm, install express and dotenv for environment variables. 
-    # Terminal Commands
+  Terminal Commands:
     npm init -y
     npm install express
     npm install dotenv
 
-4. Point browser to http://localhost:3000.
+4. Create ENV file with Nasa API Data sent in turn-in form and place it in the /root directory.
+
+5. Start server with terminal command:
+	node server.js
+
+6. Point browser to http://localhost:3000
