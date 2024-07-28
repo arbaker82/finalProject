@@ -67,7 +67,7 @@ app.get('/birthday-apods', async (req, res) => {
     }
 
     const apiKey = process.env.NASA_API_KEY;
-    const years = Array.from({ length: 20 }, (_, i) => new Date().getFullYear() - i); // Create an array of the last 20 years (REQUIREMENT 1)
+    const years = Array.from({ length: 30 }, (_, i) => new Date().getFullYear() - i); // Create an array of the last 20 years (REQUIREMENT 1)
 
     try {
         const apodData = await Promise.all(years.map(async (year) => {
