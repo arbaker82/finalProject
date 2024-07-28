@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch APOD data
     const fetchAPOD = async (date) => {
+        console.log('fetchAPOD called with date:', date);
         if (!dateRegex.test(date)) {
             alert('Invalid date format. Please use YYYY-MM-DD.');
             return;
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display APOD data
     const displayAPOD = (data) => {
+        console.log('displayAPOD called with data:', data);
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
         apodDesc.textContent = data.explanation;
@@ -80,6 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fetch the APOD for today's date on page load
-    fetchAPOD(new Date().toISOString().split('T')[0]);
+    // Ensure the initial date is not a future date
+    const initialDate = new Date().toISOString().split('T')[0];
+    if (isDateValid(initialDate)) {
+        fetchAPOD(initialDate);
+    } else {
+        fetchAPOD(today.toISOString().split('T')[0]);
+    }
 });
