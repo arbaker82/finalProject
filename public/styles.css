@@ -98,6 +98,8 @@ section {
     margin: 0 auto; /* Center image */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 2px solid white; /* Border around image */
+    
 }
 
 #apod-video {
@@ -105,6 +107,9 @@ section {
     height: 70vh; /* Set height relative to viewport */
     max-width: 100%; /* Responsive video */
     margin: auto; /* Center video */
+    border: 2px solid white; /* Border around image */ 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 #search, #birthday-link, #back-link {
