@@ -37,6 +37,7 @@ footer {
     display: flex; /* Enable flexbox layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
+    padding: 2em 0;
 }
 
 .textContainer {
@@ -77,7 +78,7 @@ main {
     display: flex; /* Enable flexbox layout */
     flex-direction: column; /* Arrange children in a column */
     align-items: center; /* Center items horizontally */
-    padding: .5em; /* Padding inside main */
+    padding: 1em; /* Padding inside main */
     max-width: 1000px; /* Max width for main content */
     width: 100%; /* Full width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
