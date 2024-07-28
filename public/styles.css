@@ -140,7 +140,7 @@ section {
 .carousel {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Wrap items to next line */
-    justify-content: center; /* Center items */
+    justify-content: left; /* L align items */
     gap: .5em; /* Space between items */
 }
 
