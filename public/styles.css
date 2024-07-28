@@ -161,6 +161,15 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
+.carousel iframe {
+    width: 100%; /* Full width */
+    height: 56.25vw; /* Maintain 16:9 aspect ratio */
+    max-height: 70vh; /* Maximum height relative to the viewport */
+    border: 2px solid white; /* Border around the iframe */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
 h1, h2, h3, p {
     margin: 0.5em 0; /* Space above and below headings and paragraphs */
 }
@@ -189,6 +198,10 @@ img[src="nasalogo1.png"]:hover {
 
     .headerContainer, .footerContainer {
         flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .carousel iframe {
+        height: 50vw; /* Adjust height for smaller screens */
     }
 }
 
