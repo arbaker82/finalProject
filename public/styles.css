@@ -10,21 +10,6 @@ html, body {
     background-attachment: fixed; /* Fix background image position */
 }
 
-.skip-link {
-    position: absolute; /* Position element absolutely */
-    top: -40px; /* Position off-screen initially */
-    left: 0; /* Align to the left */
-    background: #000; /* Set background color */
-    color: white; /* Set text color */
-    padding: 8px; /* Padding around text */
-    z-index: 100; /* Ensure it's above other elements */
-    transition: top 0.3s; /* Smooth transition for top property */
-}
-
-.skip-link:focus {
-    top: 0; /* Move into view when focused */
-}
-
 header {
     background-image: linear-gradient(to bottom, #00000060, #00000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
