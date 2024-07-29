@@ -33,7 +33,7 @@ app.get('/apod', async (req, res) => {
     }
 
     if (!isValidDate(date)) {
-        return res.status(400).json({ error: 'Date must be between Jun 16, 1995 and today.' });
+        return res.status(400).json({ error: 'Date must be between Jun 16, 1995 (The day the first APOD was released) and today.' });
     }
 
     const apiKey = process.env.NASA_API_KEY;
@@ -67,7 +67,7 @@ app.get('/birthday-apods', async (req, res) => {
     }
 
     const apiKey = process.env.NASA_API_KEY;
-    const years = Array.from({ length: 35 }, (_, i) => new Date().getFullYear() - i); // Create an array of the last 20 years (REQUIREMENT 1)
+    const years = Array.from({ length: 35 }, (_, i) => new Date().getFullYear() - i); // Create an array of the last 35 years (REQUIREMENT 1)
 
     try {
         const apodData = await Promise.all(years.map(async (year) => {
