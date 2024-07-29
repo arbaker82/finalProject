@@ -33,7 +33,7 @@ app.get('/apod', async (req, res) => {
     }
 
     if (!isValidDate(date)) {
-        return res.status(400).json({ error: 'Date must be between Jun 16, 1995 (The day the first APOD was released) and today.' });
+        return res.status(400).json({ error: 'Date must be between Jun 16, 1995 and today.' });
     }
 
     const apiKey = process.env.NASA_API_KEY;
