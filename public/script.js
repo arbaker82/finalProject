@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch APOD data
     const fetchAPOD = async (date) => {
-        console.log('fetchAPOD called with date:', date);
         if (!dateRegex.test(date)) {
             alert('Invalid date format. Please use YYYY-MM-DD.');
             return;
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display APOD data
     const displayAPOD = (data) => {
-        console.log('displayAPOD called with data:', data);
         apodTitle.textContent = data.title;
         apodDate.textContent = data.date;
         apodDesc.textContent = data.explanation;

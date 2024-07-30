@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json(); // Parse JSON data
             displayBirthdayAPODs(data); // Display the APODs in the carousel
         } catch (error) {
-            console.error('Fetch error:', error);
             alert('Failed to fetch birthday APODs. Please try again later.');
         }
     });

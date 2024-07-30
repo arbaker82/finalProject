@@ -43,13 +43,11 @@ app.get('/apod', async (req, res) => {
         const response = await fetch(url);
         if (!response.ok) {
             const errorText = await response.text();
-            console.error(`Error fetching APOD for date: ${date} - ${errorText}`);
             throw new Error(`Network response was not ok: ${errorText}`);
         }
         const data = await response.json();
         res.json(data);
     } catch (error) {
-        console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch APOD' });
     }
 });
@@ -73,22 +71,18 @@ app.get('/birthday-apods', async (req, res) => {
         const apodData = await Promise.all(years.map(async (year) => {
             const date = `${year}-${month}-${day}`;
             if (!isValidDate(date)) {
-                console.log(`Skipping invalid date: ${date}`);
                 return null;  // Skip invalid dates
             }
             const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`; // URL to fetch APOD (REQUIREMENT 5)
-            console.log(`Fetching APOD for date: ${date}`);
             const response = await fetch(url);
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error(`Error fetching APOD for date: ${date} - ${errorText}`);
                 throw new Error(`Network response was not ok: ${errorText}`);
             }
             return await response.json();
         }));
         res.json(apodData.filter(data => data !== null));  // Filter out null entries
     } catch (error) {
-        console.error('Fetch error:', error);
         res.status(500).json({ error: 'Failed to fetch birthday APODs' });
     }
 });
