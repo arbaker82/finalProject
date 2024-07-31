@@ -1,4 +1,4 @@
-## NASA Astronomy Picture of the Day (APOD) Viewer
+# NASA Astronomy Picture of the Day (APOD) Viewer
 
 ## ** API security credentials sent on turn-in Google Form.  This project needs an ENV file located in the /root directory with the NASA API Key. **
 
@@ -12,7 +12,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 - Responsive design for both mobile and desktop.
 
 ## Requirements Met 
-# There are code comments for Requirements // (REQUIREMENT 1) 
+### There are code comments for Requirements // (REQUIREMENT 1) 
 1.	Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
 	•	Met: In birthday.js, an array years is used to store the years for which APODs are fetched.
 	•	Met: In birthday.js, the monthDayMap object is used to validate the day based on the selected month.
