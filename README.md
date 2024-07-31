@@ -34,6 +34,8 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 ## Instructions to Run the Project 
 
 1. Clone the repository.
+	# Terminal command:
+	git clone https://github.com/arbaker82/finalProject.git
 
 2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
