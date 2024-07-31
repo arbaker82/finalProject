@@ -1,4 +1,4 @@
-# NASA Astronomy Picture of the Day (APOD) Viewer
+# **NASA Astronomy Picture of the Day (APOD) Viewer**
 
 ## ** API security credentials sent on turn-in Google Form.  This project needs an ENV file located in the /root directory with the NASA API Key. **
 
@@ -34,8 +34,9 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 ## Instructions to Run the Project 
 
 1. Clone the repository.
-	# Terminal command:
-	git clone https://github.com/arbaker82/finalProject.git
+### Terminal command:
+
+	`git clone https://github.com/arbaker82/finalProject.git`
 
 2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
@@ -43,13 +44,15 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 4.  Input terminal commands to initialize npm, install express, node-fetch and dotenv for environment variables. 
   
-  # Terminal Commands:
-    npm init -y
-    npm install express
-	npm install node-fetch
-    npm install dotenv
+### Terminal Commands:
+	`npm init -y`
+	`npm install express`
+	`npm install node-fetch`
+    `npm install dotenv` 
 
- 5. Start server with terminal command:
-	node server.js
+5. Start server with 
+
+### Terminal command:
+	`node server.js`
 
 6. Point browser to http://localhost:3000
