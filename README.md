@@ -1,6 +1,6 @@
 # NASA Astronomy Picture of the Day (APOD) Viewer
 
-## ** API security credentials sent on turn-in Google Form.  This project needs an ENV file located in the /root directory with the NASA API. **
+## ** API security credentials sent on turn-in Google Form.  This project needs an ENV file located in the /root directory with the NASA API Key. **
 
 ## Project Description
 The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that allows users to view, search, and analyze the daily astronomical images provided by NASA. The application displays the image of the day, allows users to search for images by date, and provides additional information about each image.  It is also capable of aggregating all APODs throughout the years for a given mm/dd. An example would be the user's birthday.
