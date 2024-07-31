@@ -1,9 +1,9 @@
-# NASA Astronomy Picture of the Day (APOD) Viewer
+## NASA Astronomy Picture of the Day (APOD) Viewer
 
 ## ** API security credentials sent on turn-in Google Form.  This project needs an ENV file located in the /root directory with the NASA API Key. **
 
 ## Project Description
-The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that allows users to view, search, and analyze the daily astronomical images provided by NASA. The application displays the image of the day, allows users to search for images by date, and provides additional information about each image.  It is also capable of aggregating all APODs throughout the years for a given mm/dd. An example would be the user's birthday.
+The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that allows users to view, search, and analyze the daily astronomical images and videos provided by NASA. The application displays the image of the day, allows users to search for images by date, and provides additional information about each image.  It is also capable of aggregating all APODs throughout the years for a given mm/dd. An example would be the user's birthday. All API images are clickable, creating a new tab with a hi-res version of the image.
 
 ## Features
 - View the NASA Astronomy Picture of the Day (APOD) along with date, title and description.
@@ -11,7 +11,8 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 - Aggregate and display all APODs for a given mm/dd date. (ex. 'Your Birthday')
 - Responsive design for both mobile and desktop.
 
-## Requirements Met
+## Requirements Met 
+# There are code comments for Requirements // (REQUIREMENT 1) 
 1.	Use arrays, objects, sets, or maps to store and retrieve information that is displayed in your app.
 	•	Met: In birthday.js, an array years is used to store the years for which APODs are fetched.
 	•	Met: In birthday.js, the monthDayMap object is used to validate the day based on the selected month.
@@ -28,7 +29,7 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 6.	Create a Node.js web server using a modern framework such as Express.js or Fastify. Serve at least one route.
 	•	Met: In server.js, an Express.js server is created and serves routes /apod and /birthday-apods.
 
-## Dependencies: Node, Express, dotenv
+## Dependencies: Node, Express, node-fetch, dotenv
 	
 ## Instructions to Run the Project 
 
@@ -36,15 +37,17 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 2. Install Node.js from https://nodejs.org/en/download/prebuilt-installer/current
    
-3. Input terminal commands to initialize npm, install express and dotenv for environment variables. 
-  Terminal Commands:
+3. Create ENV file with Nasa API Data sent in turn-in form and place it in the /root directory.
+
+4.  Input terminal commands to initialize npm, install express, node-fetch and dotenv for environment variables. 
+  
+  # Terminal Commands:
     npm init -y
     npm install express
+	npm install node-fetch
     npm install dotenv
 
-4. Create ENV file with Nasa API Data sent in turn-in form and place it in the /root directory.
-
-5. Start server with terminal command:
+ 5. Start server with terminal command:
 	node server.js
 
 6. Point browser to http://localhost:3000
