@@ -10,15 +10,15 @@
 </head>
 <body>
     <header>
-        <nav role="navigation">
-            <ul aria-label="Main navigation">
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="birthday.html" aria-current="page">Birthday APODs</a></li>
             </ul>
         </nav>
         
         <div class="headerContainer">
-            <a href="index.html" aria-label="logo is home link">  
+            <a href="index.html" aria-label="NASA home">
                 <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
             </a>  
             <div class="textContainer">
@@ -30,10 +30,10 @@
     
     <main id="main-content">
         <section id="search">
-            <h3 aria-label="Enter Your Birthday" tabindex="0">Enter Your Birthday</h3>
+            <h3 id="birthday-heading" tabindex="0">Enter Your Birthday</h3>
             <div>
                 <label for="month">Month:</label>
-                <select id="month" aria-label="Select month for birthday">
+                <select id="month" aria-labelledby="birthday-heading">
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -50,7 +50,7 @@
             </div>
             <div>
                 <label for="day">Day:</label>
-                <select id="day" aria-label="Select day for birthday">
+                <select id="day" aria-labelledby="birthday-heading">
                     <option value="01">1</option>
                     <option value="02">2</option>
                     <option value="03">3</option>
@@ -99,9 +99,9 @@
     <footer>
         <div class="footerContainer">
             <p> | Adam Baker | July 2024 </p>
-            <nav role="navigation">
+            <nav role="navigation" aria-label="Footer navigation">
                 <ul>
-                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developers first site about his dog Ruby-Doo.">Supervisory Board</a></li>
+                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developer's first site about his dog Ruby-Doo.">Supervisory Board</a></li>
                     <li><a href="birthday.html">Refresh</a></li>
                     <li><a href="index.html">Home</a></li>
                 </ul>

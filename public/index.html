@@ -10,14 +10,14 @@
 </head>
 <body>
     <header>
-        <nav role="navigation">
-            <ul aria-label="Main navigation">
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
                 <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="birthday.html">Birthday APODs</a></li>
             </ul>
         </nav>
         <div class="headerContainer">
-            <a href="index.html" aria-label="logo is home/refresh page link">
+            <a href="index.html" aria-label="NASA home">
                 <img src="nasalogo1.png" alt="NASA Logo" class="catchPhrase">
             </a>
             <div class="textContainer">
@@ -29,8 +29,8 @@
     <main id="main-content">
         <section id="apod">
             <div id="media-container">
-                <img id="apod-img" src="" alt="Astronomy Picture of the Day">
-                    <iframe id="apod-video" src="" frameborder="0" allowfullscreen title="Astronomy Picture of the Day Video"></iframe>
+                <img id="apod-img" src="" alt="Astronomy Picture of the Day" hidden>
+                <iframe id="apod-video" src="" frameborder="0" allowfullscreen title="Astronomy Picture of the Day Video" hidden></iframe>
             </div>
             <h2 id="apod-title" aria-live="polite" tabindex="0"></h2>
             <p id="apod-date" aria-live="polite" tabindex="0"></p>
@@ -45,9 +45,9 @@
     <footer>
         <div class="footerContainer">
             <p> | Adam Baker | July 2024 </p>
-            <nav role="navigation">
+            <nav role="navigation" aria-label="Footer navigation">
                 <ul>
-                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developers first site about his dog Ruby-Doo.">Supervisory Board</a></li>
+                    <li><a href="https://arbaker82.github.io/rubyDoo/" aria-label="Supervisory board. Link to developer's first site about his dog Ruby-Doo.">Supervisory Board</a></li>
                     <li><a href="index.html">Refresh</a></li>
                     <li><a href="birthday.html">Birthday APODs</a></li>
                 </ul>
