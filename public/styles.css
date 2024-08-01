@@ -200,7 +200,7 @@ p {
 }
 
 img[src="nasalogo1.png"] {
-    transition: transform .5s; /* Smooth transition for transform property */
+    transition: transform .1s; /* Smooth transition for transform property */
 }
 
 img[src="nasalogo1.png"]:hover {
