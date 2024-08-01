@@ -145,18 +145,17 @@ section {
 }
 
 .loading-spinner {
-    position: fixed;
+    position: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 25px;
     height: 25px;
-    border: 5px solid rgb(255, 255, 255);
-    border-top: 5px solid #333;
+    border: 10px solid rgb(255, 255, 255);
+    border-top: 10px solid #ff0000;
     border-radius: 50%;
     animation: spin .5s linear infinite;
     z-index: 1000;
-    background: transparent;
 }
 
 @keyframes spin {
@@ -183,7 +182,6 @@ section {
     height: 56.25vw; /* Maintain 16:9 aspect ratio */
     max-height: 70vh; /* Maximum height relative to the viewport */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 h1, h2, h3, p {
