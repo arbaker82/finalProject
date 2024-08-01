@@ -55,7 +55,7 @@ footer {
 
 .catchPhrase {
     font-size: 1.5em; /* Font size */
-    animation: fadeIn 7s; /* Apply fadeIn animation */
+    animation: fadeIn 3s; /* Apply fadeIn animation */
 }
 
 nav ul {
