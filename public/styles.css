@@ -151,7 +151,7 @@ section {
     transform: translate(-50%, -50%);
     width: 25px;
     height: 25px;
-    border: 5px solid rgba(255, 255, 255, 0.612);
+    border: 5px solid rgb(255, 255, 255);
     border-top: 5px solid #333;
     border-radius: 50%;
     animation: spin .5s linear infinite;
