@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apodDesc = document.getElementById('apod-desc');
     const searchDate = document.getElementById('search-date');
     const searchBtn = document.getElementById('search-btn');
+    const loadingSpinner = document.getElementById('loading-spinner');
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/; // Regular expression to validate date (REQUIREMENT 3)
 
@@ -17,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDateValid = (date) => {
         const inputDate = new Date(date);
         return inputDate >= startDate && inputDate <= today;
+    };
+
+    // Function to show the loading spinner
+    const showLoadingSpinner = () => {
+        loadingSpinner.hidden = false;
+    };
+
+    // Function to hide the loading spinner
+    const hideLoadingSpinner = () => {
+        loadingSpinner.hidden = true;
     };
 
     // Function to fetch APOD data
@@ -31,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        showLoadingSpinner();
         try {
             const response = await fetch(`/apod?date=${date}`); // API call to the server (REQUIREMENT 5)
             if (!response.ok) {
@@ -40,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             displayAPOD(data); // Display the fetched APOD data
         } catch (error) {
             console.error('Fetch error:', error);
+        } finally {
+            hideLoadingSpinner();
         }
     };
 

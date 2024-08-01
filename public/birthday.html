@@ -29,7 +29,10 @@
     </header>
     
     <main id="main-content">
-        <section id="search">
+        <div id="container">
+<div id="loading-spinner" class="loading-spinner" hidden></div> 
+</div>        
+<section id="search">
             <h3 id="birthday-heading" tabindex="0">Enter Your Birthday</h3>
             <div>
                 <label for="month">Month:</label>
@@ -86,7 +89,7 @@
             </div>
             <button id="search-btn" aria-label="Search for APODs by birthday">Search</button>
         </section>
-        
+    
         <section id="carousel" class="carousel" aria-live="polite">
             <!-- Images will be inserted here by JavaScript -->
         </section>

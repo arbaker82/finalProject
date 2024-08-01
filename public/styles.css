@@ -10,6 +10,15 @@ html, body {
     background-attachment: fixed; /* Fix background image position */
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    
+    
+}
+
 header {
     background-image: linear-gradient(to bottom, #00000060, #00000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
@@ -73,6 +82,7 @@ nav ul li a:hover {
     color: #ff0000d4; /* Change color on hover */
 }
 
+
 main {
     flex: 1; /* Allow main to grow and take up remaining space */
     display: flex; /* Enable flexbox layout */
@@ -99,8 +109,6 @@ section {
     margin: 0 auto; /* Center image */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    border: 2px solid white; /* Border around image */
-    
 }
 
 #apod-video {
@@ -108,7 +116,6 @@ section {
     height: 70vh; /* Set height relative to viewport */
     max-width: 100%; /* Responsive video */
     margin: auto; /* Center video */
-    border: 2px solid white; /* Border around image */ 
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -137,17 +144,36 @@ section {
     background-color: #b41803; /* Change background color on hover */
 }
 
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin .5s linear infinite;
+    z-index: 1000;
+    background: transparent;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .carousel {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Wrap items to next line */
-    justify-content: left; /* L align items */
+    justify-content: left; /* Align items to the left */
     gap: .5em; /* Space between items */
 }
 
 .carousel img {
     max-width: 100%; /* Responsive images */
     height: auto; /* Maintain aspect ratio */
-    border: 2px solid white; /* Border around images */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -156,7 +182,6 @@ section {
     width: 100%; /* Full width */
     height: 56.25vw; /* Maintain 16:9 aspect ratio */
     max-height: 70vh; /* Maximum height relative to the viewport */
-    border: 2px solid white; /* Border around the iframe */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }

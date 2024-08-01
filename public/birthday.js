@@ -4,6 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const monthSelect = document.getElementById("month");
     const daySelect = document.getElementById("day");
     const carousel = document.getElementById("carousel");
+    const loadingSpinner = document.getElementById('loading-spinner');
+
+    // Function to show the loading spinner
+    const showLoadingSpinner = () => {
+        loadingSpinner.hidden = false;
+    };
+
+    // Function to hide the loading spinner
+    const hideLoadingSpinner = () => {
+        loadingSpinner.hidden = true;
+    };
 
     // Add click event listener to the search button
     searchBtn.addEventListener("click", async () => {
@@ -16,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        showLoadingSpinner();
         try {
             // Fetch APOD data for the given month and day from the server
             const response = await fetch(`/birthday-apods?month=${month}&day=${day}`); // (REQUIREMENT 5)
@@ -26,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             displayBirthdayAPODs(data); // Display the APODs in the carousel
         } catch (error) {
             alert('Failed to fetch birthday APODs. Please try again later.');
+        } finally {
+            hideLoadingSpinner();
         }
     });
 
