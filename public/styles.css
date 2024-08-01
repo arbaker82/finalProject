@@ -10,7 +10,7 @@ html, body {
     background-attachment: fixed; /* Fix background image position */
 }
 
-#container {
+#spinnerContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
