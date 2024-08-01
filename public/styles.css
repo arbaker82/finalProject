@@ -18,7 +18,7 @@ html, body {
 }
 
 header {
-    background-image: linear-gradient(to bottom, #00000060, #00000000); /* Gradient background */
+    background-image: linear-gradient(to bottom, #0000005a, #00000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     width: 100vw; /* Full viewport width */
     text-align: center; /* Center text */
@@ -27,7 +27,7 @@ header {
 }
 
 footer {
-    background-image: linear-gradient(to top, #00000060, #00000000); /* Gradient background */
+    background-image: linear-gradient(to top, #0000005a, #00000000); /* Gradient background */
     color: rgb(255, 255, 255); /* Text color */
     width: 100vw; /* Full viewport width */
     text-align: center; /* Center text */
@@ -106,7 +106,7 @@ section {
     display: block; /* Block level element */
     margin: 0 auto; /* Center image */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
@@ -168,14 +168,13 @@ section {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Wrap items to next line */
     justify-content: left; /* Align items to the left */
-    gap: 2.5em; /* Space between items */
+    gap: 3em; /* Space between items */
 }
 
 .carousel img {
     max-width: 100%; /* Responsive images */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
