@@ -107,6 +107,7 @@ section {
     margin: 0 auto; /* Center image */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 #apod-video {
@@ -140,6 +141,7 @@ section {
 
 #search button:hover, #birthday-link a:hover, #back-link a:hover {
     background-color: #b41803; /* Change background color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .loading-spinner {
@@ -147,8 +149,8 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: 5px solid rgba(0, 0, 0, 0.1);
     border-top: 5px solid #333;
     border-radius: 50%;
@@ -166,7 +168,7 @@ section {
     display: flex; /* Enable flexbox layout */
     flex-wrap: wrap; /* Wrap items to next line */
     justify-content: left; /* Align items to the left */
-    gap: .5em; /* Space between items */
+    gap: 2.5em; /* Space between items */
 }
 
 .carousel img {
@@ -174,6 +176,7 @@ section {
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .carousel iframe {
