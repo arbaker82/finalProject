@@ -90,3 +90,29 @@ app.get('/birthday-apods', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+/* 	CODE SUMMARY:
+
+    1.	Imports and Configuration:
+	    •	Imports necessary modules: express for creating the server, node-fetch for making API requests, and dotenv for managing environment variables.
+	    •	Configures environment variables using dotenv.
+	2.	Server Initialization:
+	    •	Initializes an Express application.
+	    •	Sets the port for the server to the value specified in the environment variables or defaults to 3000.
+	    •	Serves static files from the ‘public’ directory.
+	3.	Validation Setup:
+	    •	Defines regular expressions for validating date, month, and day inputs.
+	    •	Defines the valid date range for the NASA APOD API (from June 16, 1995, to today).
+	4.	Helper Functions:
+	    •	Creates a function to check if a given date is within the valid date range.
+	5.	Endpoints:
+	    •	/apod: Fetches the APOD for a specific date.
+	    •	Validates the date format and range.
+	    •	Constructs the API request URL using the provided date and NASA API key.
+	    •	Fetches the APOD data from the NASA API and returns it as JSON.
+	    •	/birthday-apods: Fetches APODs for a specific month and day across the last 35 years.
+	    •	Validates the month and day inputs.
+	    •	Constructs an array of the last 35 years.
+	    •	Fetches the APOD data for each valid date and returns the data as JSON, filtering out invalid dates.
+	6.	Server Listening:
+	    •	Starts the server and listens on the specified port, logging a message to the console when the server is running. */
