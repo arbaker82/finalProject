@@ -73,7 +73,7 @@ nav ul li {
 nav ul li a {
     color: white; /* Link color */
     text-decoration: none; /* Remove underline from links */
-    font-size: 1em; /* Set font size */
+    font-size: 1.2em; /* Set font size */
 }
 
 nav ul li a:hover {
