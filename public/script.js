@@ -102,3 +102,32 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchAPOD(today.toISOString().split('T')[0]);
     }
 });
+
+/* 	1.	DOM Content Loaded Event Listener:
+	    •	Waits for the DOM to fully load before executing the script.
+	2.	Element References:
+        •	References to HTML elements such as the APOD image (apodImg), video (apodVideo), title (apodTitle), date (apodDate), description (apodDesc), date input (searchDate), search button (searchBtn), and loading spinner (loadingSpinner).
+	3.	Date Validation:
+	    •	Regular expression to validate the date format (YYYY-MM-DD).
+	    •	Defines the valid date range for APODs (from June 16, 1995, to today’s date).
+	4.	Utility Functions:
+	    •	isDateValid(date): Checks if a given date is within the valid range.
+	    •	showLoadingSpinner(): Displays the loading spinner.
+	    •	hideLoadingSpinner(): Hides the loading spinner.
+	5.	Fetch APOD Function:
+	    •	fetchAPOD(date): Fetches APOD data for a specified date.
+	    •	Validates the date format and range.
+	    •	Shows the loading spinner during the fetch operation.
+	    •	Makes an API call to the server to retrieve APOD data.
+	    •	Displays the fetched APOD data.
+	    •	Hides the loading spinner after the fetch operation.
+	6.	Display APOD Function:
+	    •	displayAPOD(data): Displays the fetched APOD data on the webpage.
+	    •	Updates the title, date, and description elements.
+	    •	Shows either the image or video based on the media type.
+	    •	Allows clicking on the image to open the high-resolution version in a new tab.
+	7.	Event Listeners:
+	    •	Image click event to open the high-resolution image in a new tab.
+	    •	Search button click event to fetch and display APOD data for the selected date.
+	8.	Initial Fetch:
+	    •	Ensures the initial date is not a future date and fetches APOD data for the current date or a valid initial date. */
