@@ -102,29 +102,3 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchAPOD(today.toISOString().split('T')[0]);
     }
 });
-
-/*  CODE SUMMARY:
-    
-    1.	DOM Elements and Event Listeners:
-	    •	Obtains references to various DOM elements such as the APOD image, video, title, date, description, search date input, search button, and loading spinner.
-	    •	Adds event listeners for the search button click and APOD image click.
-	2.	Validation Setup:
-	    •	Defines a regular expression for validating date format (YYYY-MM-DD).
-	    •	Defines the valid date range for the NASA APOD API (from June 16, 1995, to today).
-	3.	Helper Functions:
-	    •	isDateValid(date): Checks if a given date is within the valid range.
-	    •	showLoadingSpinner(): Shows the loading spinner.
-	    •	hideLoadingSpinner(): Hides the loading spinner.
-	4.	Fetching and Displaying APOD Data:
-	    •	fetchAPOD(date): Fetches APOD data for a specific date.
-	    •	Validates the date format and range.
-	    •	Shows the loading spinner.
-	    •	Fetches the APOD data from the server endpoint.
-	    •	Displays the APOD data in the DOM elements.
-	    •	Hides the loading spinner.
-	    •	displayAPOD(data): Displays the fetched APOD data.
-	    •	Updates the DOM elements with the APOD title, date, and description.
-	    •	Displays the image or video based on the media type.
-	    •	Adds a click event to the image to open the high-resolution version in a new tab.
-	5.	Initialization:
-	    •	Sets the initial date to today’s date and fetches the APOD data for that date if it is valid. */

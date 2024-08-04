@@ -96,24 +96,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-/* CODE SUMMARY:
-    
-    1.	DOM Elements and Event Listeners:
-	    •	Obtains references to various DOM elements such as the search button, month and day select elements, carousel, and loading spinner.
-	    •	Adds a click event listener to the search button.
-	2.	Helper Functions:
-	    •	showLoadingSpinner(): Shows the loading spinner.
-	    •	hideLoadingSpinner(): Hides the loading spinner.
-	    •	isValidDate(month, day): Validates if the provided month and day combination is valid using a predefined map of days in each month.
-	3.	Fetching and Displaying Birthday APOD Data:
-	    •	Event listener for the search button click:
-	    •	Validates the selected month and day.
-	    •	Shows the loading spinner.
-	    •	Fetches APOD data for the given month and day across multiple years from the server endpoint.
-	    •	Displays the fetched APOD data in the carousel.
-	    •	Hides the loading spinner.
-	    •	displayBirthdayAPODs(apods): Displays the fetched APOD data in the carousel.
-	    •	Clears any existing content in the carousel.
-	    •	For each APOD, creates a container and adds the image or video, title, date, and description to the container.
-	    •	Adds an event listener to the image to open the high-resolution version in a new tab. */
