@@ -16,7 +16,7 @@ const dayRegex = /^(0[1-9]|[12][0-9]|3[01])$/;
 
 // Define the valid date range for the NASA APOD API
 const startDate = new Date('1995-06-16');
-const endDate = new Date();  // Today's date
+const endDate = new Date(); // Today's date
 
 // Function to check if a date is within the valid range (REQUIREMENT 4)
 const isValidDate = (date) => {
@@ -81,7 +81,7 @@ app.get('/birthday-apods', async (req, res) => {
             }
             return await response.json();
         }));
-        res.json(apodData.filter(data => data !== null));  // Filter out null entries
+        res.json(apodData.filter(data => data !== null)); // Filter out null entries
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch birthday APODs' });
     }
