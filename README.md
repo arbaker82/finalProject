@@ -13,19 +13,18 @@ The NASA Astronomy Picture of the Day (APOD) Viewer is a web application that al
 
 ## Requirements Met 
 ### There are code comments for Requirements // ex. (REQUIREMENT 1) 
-
 1.	REQUIREMENT 1: Use arrays, objects, sets or maps to store and retrieve information that is displayed in the app.
-	-	This is satisfied with the monthDayMap object in the isValidDate function.
+	-	monthDayMap object in the isValidDate function.
 2.	REQUIREMENT 2: Analyze data that is stored in arrays, objects, sets or maps and display information about it in the app.
-	-	This is satisfied in the displayBirthdayAPODs function where the fetched APODs are displayed.
+	-	displayBirthdayAPODs function where the fetched APODs are displayed.
 3.	REQUIREMENT 3: Use a regular expression to validate user input and either prevent the invalid input or inform the user about it in their server.js, birthday.js, and script.js files.
-	-	This is satisfied in server.js with the regular expressions for validating date, month, and day.
+	-	Met with server.js regular expressions for validating date, month, and day.
 4.	REQUIREMENT 4: Analyze text and display useful information about it.
-	-	This is satisfied with the isValidDate function in both server.js and birthday.js.
+	-	isValidDate function in both server.js and birthday.js.
 5.	REQUIREMENT 5: Create a function that accepts two or more input parameters and returns a value that is determined by the inputs.
-	-	This is satisfied with the fetchAPOD and displayBirthdayAPODs functions.
+	-	Satisfied with the fetchAPOD and displayBirthdayAPODs functions.
 6.	REQUIREMENT 6: Retrieve data from a third-party API and use it to display something in the app.
-	-	This is satisfied with the API calls to fetch APOD data in both server.js and birthday.js.
+	-	API calls to fetch APOD data in both server.js and birthday.js.
 
 ## Dependencies: Node, Express, node-fetch, dotenv
 	
