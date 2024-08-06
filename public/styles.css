@@ -8,6 +8,10 @@ html, body {
     background-image: url(jwstSaturation.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    -webkit-hyphens: auto;
+                  hyphens: auto;
+                  word-wrap: break-word;
+                  overflow-wrap: anywhere;
 }
 
 #spinnerContainer {
