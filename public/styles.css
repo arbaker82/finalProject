@@ -5,7 +5,7 @@ html, body {
     flex-direction: column; /* Arrange children in a column */
     font-family: 'Exo', sans-serif; /* Set font-family to 'Exo' */
     align-items: center; /* Center items horizontally */
-    background-image: url(jwst3.jpg); /* Set background image */
+    background-image: url(jwstSaturation.jpg); /* Set background image */
     background-repeat: no-repeat; /* Prevent background image from repeating */
     background-attachment: fixed; /* Fix background image position */
 }
