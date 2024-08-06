@@ -1,13 +1,13 @@
 html, body {
-    height: 100%; /* Make html and body take up the full height of the viewport */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Arrange children in a column */
-    font-family: 'Exo', sans-serif; /* Set font-family to 'Exo' */
-    align-items: center; /* Center items horizontally */
-    background-image: url(jwstSaturation.jpg); /* Set background image */
-    background-repeat: no-repeat; /* Prevent background image from repeating */
-    background-attachment: fixed; /* Fix background image position */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Exo', sans-serif;
+    align-items: center;
+    background-image: url(jwstSaturation.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #spinnerContainer {
@@ -18,134 +18,132 @@ html, body {
 }
 
 header {
-    background-image: linear-gradient(to bottom, #0000003a, #00000000); /* Gradient background */
-    color: rgb(255, 255, 255); /* Text color */
-    width: 100vw; /* Full viewport width */
-    text-align: center; /* Center text */
-    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
-    padding: 1em 0; /* Padding inside header */
+    background-image: linear-gradient(to bottom, #0000003a, #00000000);
+    color: rgb(255, 255, 255);
+    width: 100vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    padding: 1em 0;
 }
 
 footer {
-    background-image: linear-gradient(to top, #0000003a, #00000000); /* Gradient background */
-    color: rgb(255, 255, 255); /* Text color */
-    width: 100vw; /* Full viewport width */
-    text-align: center; /* Center text */
-    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
-    padding: 1em 0; /* Padding inside footer */
+    background-image: linear-gradient(to top, #0000003a, #00000000);
+    color: rgb(255, 255, 255);
+    width: 100vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    padding: 1em 0;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; } /* Start with opacity 0 */
-    to { opacity: 1; } /* End with opacity 1 */
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .headerContainer, .footerContainer {
-    display: flex; /* Enable flexbox layout */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2em 0;
 }
 
 .textContainer {
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Arrange children in a column */
-    justify-content: center; /* Center text vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .catchPhrase {
-    font-size: 1.5em; /* Font size */
-    animation: fadeIn 3s; /* Apply fadeIn animation */
+    font-size: 1.5em;
+    animation: fadeIn 3s;
 }
 
 nav ul {
-    list-style-type: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Enable flexbox layout */
-    justify-content: flex-end; /* Align items to the end of the container */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav ul li {
-    margin: 0 1em; /* Space out list items */
+    margin: 0 1em;
 }
 
 nav ul li a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 1.2em; /* Set font size */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 nav ul li a:hover {
-    color: #ff0000d4; /* Change color on hover */
+    color: #ff0000d4;
 }
 
-
 main {
-    flex: 1; /* Allow main to grow and take up remaining space */
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Arrange children in a column */
-    align-items: center; /* Center items horizontally */
-    padding: 1em; /* Padding inside main */
-    max-width: 1000px; /* Max width for main content */
-    width: 100%; /* Full width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499); /* Subtle shadow */
-    background-color: rgb(37, 37, 37); /* Background color */
-    border-radius: 8px; /* Rounded corners */
-    color: white; /* Text color */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.499);
+    background-color: rgb(37, 37, 37);
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
 }
 
 section {
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 #apod img {
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Block level element */
-    margin: 0 auto; /* Center image */
-    border-radius: 8px; /* Rounded corners */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 #apod-video {
-    width: 100%; /* Full width */
-    height: 70vh; /* Set height relative to viewport */
-    max-width: 100%; /* Responsive video */
-    margin: auto; /* Center video */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 100%;
+    height: 70vh;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #search, #birthday-link, #back-link {
-    display: flex; /* Enable flexbox layout */
-    justify-content: space-around; /* Space around items */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #search input[type="date"], #search button, #birthday-link a, #back-link a {
-    padding: 0.5em 1em; /* Padding inside elements */
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1em; /* Set font size */
-    margin: 0.5em; /* Space between elements */
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    margin: 0.5em;
 }
 
 #search button, #birthday-link a, #back-link a {
-    background-color: #575757; /* Button background color */
-    color: white; /* Button text color */
-    text-decoration: none; /* Remove underline from links */
+    background-color: #575757;
+    color: white;
+    text-decoration: none;
 }
 
 #search button:hover, #birthday-link a:hover, #back-link a:hover {
-    background-color: #b41803; /* Change background color on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #b41803;
+    cursor: pointer;
 }
 
 .loading-spinner {
-    position: center;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -164,63 +162,71 @@ section {
 }
 
 .carousel {
-    display: flex; /* Enable flexbox layout */
-    flex-wrap: wrap; /* Wrap items to next line */
-    justify-content: left; /* Align items to the left */
-    gap: 3em; /* Space between items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 3em;
 }
 
 .carousel img {
-    max-width: 100%; /* Responsive images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .carousel iframe {
-    width: 100%; /* Full width */
-    height: 56.25vw; /* Maintain 16:9 aspect ratio */
-    max-height: 70vh; /* Maximum height relative to the viewport */
-    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    height: 56.25vw;
+    max-height: 70vh;
+    border-radius: 8px;
 }
 
 h1, h2, h3, p {
-    margin: 0.5em 0; /* Space above and below headings and paragraphs */
+    margin: 0.5em 0;
 }
 
 h1, h2 {
-    margin: 0.2em 0; /* Space above and below headings */
+    margin: 0.2em 0;
 }
 
 p {
-    margin: 0.2em 0; /* Space above and below paragraphs */
+    margin: 0.2em 0;
 }
 
-img[src="nasalogo1.png"] {
-    transition: transform .1s; /* Smooth transition for transform property */
+img[src="apodOriginal.png"] {
+    transition: transform 0.2s ease-in-out; /* Smooth transition for transform property */
 }
 
-img[src="nasalogo1.png"]:hover {
+img[src="apodBirthdayHats.png"]:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+img[src="apodBirthdayHats.png"] {
+    transition: transform 0.2s ease-in-out; /* Smooth transition for transform property */
+}
+
+img[src="apodOriginal.png"]:hover {
     transform: scale(1.1); /* Scale up on hover */
 }
 
 @media (max-width: 768px) {
     header, footer {
-        padding: 0.5em 0.2em; /* Reduce padding on smaller screens */
-        font-size: 0.9em; /* Adjust font size for smaller screens */
+        padding: 0.5em 0.2em;
+        font-size: 0.9em;
     }
 
     .headerContainer, .footerContainer {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+        flex-direction: column;
     }
 
     .carousel iframe {
-        height: 50vw; /* Adjust height for smaller screens */
+        height: 50vw;
     }
 }
 
 @media (max-width: 480px) {
     header, footer {
-        font-size: 0.8em; /* Further reduce font size for very small screens */
+        font-size: 0.8em;
     }
 }
