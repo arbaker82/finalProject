@@ -91,7 +91,9 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-/* 1.	Imports and Setup:
+/*  Code Summary:
+
+    1.	Imports and Setup:
         •	Express.js for creating the web server.
 	    •	node-fetch for making API requests.
 	    •	dotenv for managing environment variables.

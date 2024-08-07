@@ -97,7 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* 1.	DOM Content Loaded Event Listener:
+/*  Code Summary:
+    
+    1.	DOM Content Loaded Event Listener:
 	    •	Waits for the DOM to fully load before executing the script.
 	2.	Element References:
 	    •	References to HTML elements such as the search button (searchBtn), month and day select elements (monthSelect, daySelect), the carousel container (carousel), and the loading spinner (loadingSpinner).

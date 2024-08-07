@@ -103,7 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* 	1.	DOM Content Loaded Event Listener:
+/* 	Code Summary:
+
+    1.	DOM Content Loaded Event Listener:
 	    •	Waits for the DOM to fully load before executing the script.
 	2.	Element References:
         •	References to HTML elements such as the APOD image (apodImg), video (apodVideo), title (apodTitle), date (apodDate), description (apodDesc), date input (searchDate), search button (searchBtn), and loading spinner (loadingSpinner).
