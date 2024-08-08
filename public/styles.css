@@ -6,6 +6,7 @@ html, body {
     font-family: 'Exo', sans-serif;
     align-items: center;
     background-image: url(jwstSaturation.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -13,7 +14,7 @@ html, body {
     -webkit-hyphens: auto;
                   hyphens: auto;
                   word-wrap: break-word;
-                  overflow-wrap: anywhere;
+                  overflow-wrap: anywhere; /* Chrome responsiveness fix for hyphens from class */
 }
 
 #spinnerContainer {
