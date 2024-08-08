@@ -8,6 +8,8 @@ html, body {
     background-image: url(jwstSaturation.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    background-color: #474747;
     -webkit-hyphens: auto;
                   hyphens: auto;
                   word-wrap: break-word;
@@ -123,6 +125,8 @@ section {
 
 #search, #birthday-link, #back-link {
     display: flex;
+    flex-direction: column;
+    padding: 1em;
     justify-content: space-around;
     align-items: center;
 }
